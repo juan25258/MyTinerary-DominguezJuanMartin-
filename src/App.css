@@ -18,6 +18,12 @@ img.d-block.w-100{
 a.a-MyTinerary {
   text-decoration: none;
 }
+
+footer{
+  display: flex;
+  justify-content: space-around;
+}
+
 .bi-facebook{
   color: #2b60c1;
 }
