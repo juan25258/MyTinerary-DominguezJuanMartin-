@@ -1,0 +1,12 @@
+div.botonesnav{
+    display: flex;
+    gap: 1rem;
+  }
+  button.botonesnav1, button.botonesnav2{
+    background: #ffffff;
+    border: 0;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }

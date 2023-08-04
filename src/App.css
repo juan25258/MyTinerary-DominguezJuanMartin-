@@ -1,36 +1,6 @@
-#root {
-  
-}
-main{
-  display: flex;
-  align-items: center;
-  min-height: 80vh;
-}
-section{
-  width: -webkit-fill-available;
-}
-img.d-block.w-100{
-  min-height:87vh;
-}
-.nav.col-md-4.justify-content-end.list-unstyled.d-flex{
-  margin-right: 2rem;
-}
-a.a-MyTinerary {
-  text-decoration: none;
+#root { 
 }
 
-footer{
-  display: flex;
-  justify-content: space-around;
-}
 
-.bi-facebook{
-  color: #2b60c1;
-}
-.bi-instagram{
-  color: #6a329d;
-}
-.bi-whatsapp{
- color:#12b912;
-}
+
 

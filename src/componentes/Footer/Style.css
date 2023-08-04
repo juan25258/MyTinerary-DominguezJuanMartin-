@@ -1,0 +1,14 @@
+footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+  .bi-facebook{
+    color: #2b60c1;
+  }
+  .bi-instagram{
+    color: #6a329d;
+  }
+  .bi-whatsapp{
+   color:#12b912;
+  }

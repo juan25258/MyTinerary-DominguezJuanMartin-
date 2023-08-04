@@ -1,23 +1,8 @@
-:root {
+#root {
  padding: 0;
  margin: 0;
  box-sizing: border-box;
- background-color: #ffffff;
+ background: #577519;
 }
-main{
-  display: flex;
-  align-items: center;
-  min-height: 80vh; 
-}
-img.logomontaña{
-  height: 150px;
-  margin-left: 7rem;
-}
-div.botonesnav{
-  display: flex;
-  gap: 1rem;
-}
-button.botonesnav1, button.botonesnav2{
-  background: #ffffff;
-  border: 0;
-}
+
+
