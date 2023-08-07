@@ -1,5 +1,6 @@
 import React from 'react'
 import Style from './Style.css'
+import SlideCarousel from '../SlideCarousel'
 
 export default function Carousel() {
   return (
@@ -13,26 +14,27 @@ export default function Carousel() {
             <div className="carousel-inner" role="listbox">
                 <div className="carousel-item active">
                     <img className='imgcarousel1' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h3>Title</h3>
-                        <p>Description</p>
-                    </div>
-                    <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h3>Title</h3>
-                        <p>Description</p>
-                    </div>
-                    <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h3>Title</h3>
-                        <p>Description</p>
-                    </div>
-                    <img className='imgcarousel4' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU"  alt="First slide" ></img>
-                    <div className="carousel-caption d-none d-md-block">
-                        <h3>Title</h3>
-                        <p>Description</p>
-                    </div>
+                    <img className='imgcarousel1' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel1' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel1' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    
                 </div>
+                <div className="carousel-item">
+                    <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    
+                </div>
+                <div className="carousel-item">
+                    <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="First slide" ></img>
+                    
+                </div>   
+                    
+                
                 
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">

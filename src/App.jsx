@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.css'
+/* import 'bootstrap/dist/css/bootstrap.css' */
 /* import Main from './componentes/Main/index' */
 import Layout from './layouts/Layout'
 import Home from './pages/Home'

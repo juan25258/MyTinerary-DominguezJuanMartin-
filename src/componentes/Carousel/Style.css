@@ -4,10 +4,6 @@ section{
     min-height: 50vh;
 }
 
-img.imgcarousel1, img.imgcarousel2, img.imgcarousel3, img.imgcarousel4{
-   
-
-}
 
 div.carousel-item.active{
     display: flex;
@@ -15,4 +11,7 @@ div.carousel-item.active{
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+ol.carousel-indicators{
+    margin-bottom: -2rem;
 }

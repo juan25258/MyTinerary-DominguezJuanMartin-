@@ -1,6 +1,6 @@
 import React from 'react'
 import Style from './Style.css'
-import Cities from '../../pages/Cities/Cities'
+
 
 
 export default function Header() {
