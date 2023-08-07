@@ -3,7 +3,7 @@ import Style from './Style.css'
 
 export default function Home() {
   return (
-    <main>
+    <main className='container'>
 
           <div>
           <article>

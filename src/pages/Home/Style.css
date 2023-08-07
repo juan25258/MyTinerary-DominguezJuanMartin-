@@ -1,0 +1,20 @@
+main{
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+    margin: auto;
+    padding: 3rem 7rem 2rem 2rem;
+    position: relative;
+  }
+article{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;   
+  flex-direction: column;
+}
+div.logomountain{
+    display: flex;
+    /* width: 50vw; */
+}
+  

@@ -1,0 +1,18 @@
+section{
+    display: flex;
+    justify-content: center;
+    min-height: 50vh;
+}
+
+img.imgcarousel1, img.imgcarousel2, img.imgcarousel3, img.imgcarousel4{
+   
+
+}
+
+div.carousel-item.active{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
