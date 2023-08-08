@@ -31,17 +31,17 @@ export default function Carousel() {
                     <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
                 </ol>
                 <div className="carousel-inner" role="listbox">
-                    <div className='imgcarousel1' className="carousel-item active">
+                    <div className='imgcarousel1' className1="carousel-item active">
                         {data.map((each,key)=><SlideCarousel key={key} src={each.src} alt={each.alt}/>)}
                         
                         
                     </div>
-                    <div className='imgcarousel2' className="carousel-item">
+                    <div className='imgcarousel2' className2="carousel-item">
                         {data.map((each,key)=><SlideCarousel2 key={key} src={each.src} alt={each.alt}/>)}
                         
                         
                     </div>
-                    <div className='imgcarousel3' className="carousel-item">
+                    <div className='imgcarousel3' className3="carousel-item">
                         {data.map((each,key)=><SlideCarousel3 key={key} src={each.src} alt={each.alt}/>)}
                         
                         
