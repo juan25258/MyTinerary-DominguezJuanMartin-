@@ -1,11 +1,10 @@
-/* import React from 'react'
+import React from 'react'
 import Style from './Style.css'
-import Home from '../../pages/Home'
+import Home from './Home.jsx'
 
 
 export default function Main() {
   return (
-    <Home
+    <Home />
   )
 }
- */
