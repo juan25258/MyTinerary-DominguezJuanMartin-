@@ -1,8 +1,11 @@
 import React from 'react'
 import Style from './Style.css'
+import Carousel from '../../componentes/Carousel'
+
 
 export default function Home() {
   return (
+    <>
     <main className='container'>
           <div>
               <article>
@@ -11,8 +14,13 @@ export default function Home() {
                   <button type="button" class="btn btn-primary">View More</button>
               </article>
           </div>
-          <div className="logomountain"><img src="../src/assets/mountain-svg.svg" alt="" /></div>
+          <div className="logo"><img className='logo-Mytinerary' src={"../public/logo-Mytinerary.jpg"} alt="" /></div>
     </main>
+    
+      <Carousel />
+   
+    </>
+    
     
   )
 }

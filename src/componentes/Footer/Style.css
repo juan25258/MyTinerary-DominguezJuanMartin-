@@ -3,13 +3,21 @@ footer{
     justify-content: space-around;
     padding: 2rem;
     margin-top: 2rem;
+    min-height: 10rem;
+    align-items: center;
+  }
+  .text-body-secondary{
+    color: rgb(22 114 205 / 75%)!important;
   }
   .bi-facebook{
     color: #2b60c1;
+    font-size: xx-large;
   }
   .bi-instagram{
     color: #6a329d;
+    font-size: xx-large;
   }
   .bi-whatsapp{
    color:#12b912;
+   font-size: xx-large;
   }

@@ -1,4 +1,7 @@
-section{
+main{
     min-height: 80vh;
     align-items: center;
+}
+div.container-fluid{
+    justify-content: center !important
 }
