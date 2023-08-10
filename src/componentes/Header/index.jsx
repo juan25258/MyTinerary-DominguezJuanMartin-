@@ -9,7 +9,7 @@ export default function Header() {
     <header>
             <nav className="navbar">
                 <div className="container">
-                  <a href="#" className="a-MyTinerary"><h2>My Tinerary</h2></a> 
+                  <a href="#" className="a-MyTinerary"><h1>My Tinerary</h1></a> 
                   <div className="botonesnav">
                     <button className="btn btn-secondary" type="button"><LinkHeader to="/">Home</LinkHeader></button>
                     <button className="btn btn-secondary" type="button"><LinkHeader to="/Cities">Cities</LinkHeader></button>

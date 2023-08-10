@@ -14,3 +14,6 @@ div.container-fluid{
 nav.navbar.bg-body-tertiary{
     background: radial-gradient(black, transparent);
 }
+h2{
+    color: rgb(182, 26, 26);
+}
