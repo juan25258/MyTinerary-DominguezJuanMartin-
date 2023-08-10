@@ -15,6 +15,7 @@ export default function Home() {
               </article>
           </div>
           <div className="logo"><img className='logo-Mytinerary' src={"../public/logo-Mytinerary.jpg"} alt="" /></div>
+          
     </main>
     
       <Carousel />

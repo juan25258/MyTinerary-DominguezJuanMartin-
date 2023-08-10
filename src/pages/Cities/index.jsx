@@ -13,7 +13,7 @@ export default function Cities() {
               </form>
             </div>
         </nav>
-        <article className='City'>
+        <article className='City .container'>
           <h2>Cities</h2>
         </article>
         
