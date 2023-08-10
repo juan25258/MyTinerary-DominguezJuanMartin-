@@ -2,6 +2,11 @@
     display: flex;
     justify-content: center;
 }
+
+h2.carousel-title{
+    display: flex;
+    justify-content: center;
+}
 .carousel{
     display: flex;
     justify-content: center;

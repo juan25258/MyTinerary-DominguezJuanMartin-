@@ -76,7 +76,8 @@ const Carousel = () => {
 
 
   return (
-    <>
+    <>  
+        <h2 className='carousel-title'>Cities</h2>
         <div className="carousel">
           <Arrow src="/flecha-atras.svg" alt='flecha-atras' fn={prev} />
           <div className=''>
