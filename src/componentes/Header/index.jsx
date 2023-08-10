@@ -11,9 +11,9 @@ export default function Header() {
                 <div className="container">
                   <a href="#" className="a-MyTinerary"><h2>My Tinerary</h2></a> 
                   <div className="botonesnav">
-                    <button className="botonesnav1" type="button"><LinkHeader to="/">Home</LinkHeader></button>
-                    <button className="botonesnav2" type="button"><LinkHeader to="/Cities">Cities</LinkHeader></button>
-                    <button type="button" className={"btn btn-primary"}> <a href="">Login</a></button>
+                    <button className="btn btn-secondary" type="button"><LinkHeader to="/">Home</LinkHeader></button>
+                    <button className="btn btn-secondary" type="button"><LinkHeader to="/Cities">Cities</LinkHeader></button>
+                    <button type="button" className="btn btn-primary"> <a href="">Login</a></button>
                   </div>
                 </div>
             </nav>

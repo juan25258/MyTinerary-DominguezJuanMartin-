@@ -17,7 +17,7 @@ const router = createBrowserRouter([
 {path:'/Cities',element: <Layout />,
 children:[
   {path:'/Cities',element: <Cities />}
-]}
+]},
 ])
 
 function App() {

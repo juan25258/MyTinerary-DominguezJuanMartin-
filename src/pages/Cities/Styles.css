@@ -11,3 +11,6 @@ div.container-fluid{
     height: 80vh;
     align-items: center;
 }
+nav.navbar.bg-body-tertiary{
+    background: radial-gradient(black, transparent);
+}

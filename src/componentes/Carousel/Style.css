@@ -6,6 +6,7 @@
 h2.carousel-title{
     display: flex;
     justify-content: center;
+    color: #12adc7;
 }
 .carousel{
     display: flex;
@@ -26,6 +27,12 @@ div.indicadores{
     align-items: center;
     justify-content: center;
     min-height: 4rem;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+    color: #ff8c00;
 }
 
 

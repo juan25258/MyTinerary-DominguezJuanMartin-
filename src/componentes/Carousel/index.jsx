@@ -77,22 +77,26 @@ const Carousel = () => {
 
   return (
     <>  
-        <h2 className='carousel-title'>Cities</h2>
+        <h2 className='carousel-title'>Popular MyTineraries</h2>
         <div className="carousel">
           <Arrow src="/flecha-atras.svg" alt='flecha-atras' fn={prev} />
           <div className=''>
             <div className='carousel-imagenes'>
                 <div className='imagenes'>
-                  <img className='' src={images[index]} alt="" />  
+                  <img className='' src={images[index]} alt="" />
+                  <h3>City X</h3>
                 </div>
                 <div className='imagenes'>
                   <img className='' src={images1[index]} alt="" />
+                  <h3>City X</h3>
                 </div>
                 <div className='imagenes'>
                   <img className='' src={images2[index]} alt="" />
+                  <h3>City X</h3>
                 </div>
                 <div className='imagenes'> 
-                  <img className='' src={images3[index]} alt="" /> 
+                  <img className='' src={images3[index]} alt="" />
+                  <h3>City X</h3> 
                 </div>
             </div>
             

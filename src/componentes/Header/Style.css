@@ -7,8 +7,8 @@ div.botonesnav{
     display: flex;
     gap: 1rem;
   }
-button.botonesnav1, button.botonesnav2{
-    background: #ffffff;
+button.btn.btn-secondary{
+    background: #4747a8;
     border: 0;
 }
 a{
