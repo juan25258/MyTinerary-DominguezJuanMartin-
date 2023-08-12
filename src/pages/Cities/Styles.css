@@ -1,4 +1,19 @@
-section{
+main{
     min-height: 80vh;
     align-items: center;
+}
+div.container-fluid{
+    justify-content: center !important
+}
+.City{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+nav.navbar.bg-body-tertiary{
+    background: radial-gradient(black, transparent);
+}
+h2{
+    color: rgb(182, 26, 26);
 }

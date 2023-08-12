@@ -1,82 +1,112 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Arrow from '../Arrow'
 import Style from './Style.css'
-import SlideCarousel from '../SlideCarousel'
-import SlideCarousel2 from '../SlideCarousel2'
-import SlideCarousel3 from '../SlideCarousel3'
 
-export default function Carousel() {
- let data = [
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 1'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 2'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 3'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 4'},
-      /*   {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 5'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 6'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 7'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 8'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 9'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 10'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 11'},
-        {src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU',alt:'imagen 12'}, */
-      ]
- 
-    
+const images = [
+  'https://img.freepik.com/fotos-premium/planeta-alienigena-espacio-profundo-paisaje-extraterrestre-ia-generativa_788189-2626.jpg?w=740',
+  'https://img.freepik.com/foto-gratis/horizonte-centro-san-diego-luna-llena-sobre-agua-noche_649448-4045.jpg?w=740&t=st=1691527174~exp=1691527774~hmac=4bd3b880554d77b38746ef2061cdae8215d8c8d22a824465ada41a4265dd854f',
+  'https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=740'
+]
+
+const images1=[
+  'https://img.freepik.com/foto-gratis/cascada-barco-limpio-china-natural_1417-1356.jpg?w=740&t=st=1691541560~exp=1691542160~hmac=e3cdcc6c927f9ae2c44a75b55f9563e4a88c37ffa1c594edb270e66856e355d1',
+  'https://img.freepik.com/fotos-premium/lago-mapourika-west-coast-nueva-zelanda-twilice_46383-182.jpg?w=740',
+  'https://img.freepik.com/foto-gratis/hermosa-foto-lago-cristalino-junto-base-montana-nevada-dia-soleado_181624-5459.jpg?w=740&t=st=1691541578~exp=1691542178~hmac=50a2bc0ee147b2a4de0e66719b9c3b311579795416997b44f918fd312f9b0b19'
+]
+
+const images2 = [
+  'https://img.freepik.com/foto-gratis/muelle-lago-hallstatt-austria_181624-44201.jpg?w=740&t=st=1691541587~exp=1691542187~hmac=addb04db5f0ea627202bc0c2b83f2ef56d694d91382f6d4fb914c7b9ff422fa8',
+  'https://img.freepik.com/foto-gratis/toma-aerea-hermosa-orilla-mar-colinas-fondo-al-atardecer_181624-24143.jpg?w=740&t=st=1691541584~exp=1691542184~hmac=a784f8713bdd71b7a77e8bf45d9d422311efb900396029fd3109a3333154432b',
+  'https://img.freepik.com/foto-gratis/pintura-digital-montana-arbol-colorido-primer-plano_1340-25699.jpg?w=740&t=st=1691540744~exp=1691541344~hmac=b094758e36b81aed6a37cc0a18e99df4b611c2f0820684c58489e0ffce28bc83'
+]
+
+const images3 = [
+  'https://img.freepik.com/foto-gratis/montanas-seoraksan-estan-cubiertas-niebla-manana-amanecer-seul-corea_335224-313.jpg?w=740&t=st=1691541597~exp=1691542197~hmac=bafe69202775277aef18bed4e5be7a6b26c000ac652cf91df53650d30cb1dd4e',
+  'https://img.freepik.com/foto-gratis/hermoso-paisaje-formaciones-rocosas-junto-al-mar-queens-bath-kauai-hawaii-al-atardecer_181624-36857.jpg?w=740&t=st=1691541591~exp=1691542191~hmac=f96bdd269b3bcdcaebb14f652dd10091fddf2a70fa0d9b57bee36aea6d8aa4f9',
+  'https://img.freepik.com/fotos-premium/puente-madera-traves-rio-temporada-otono_211251-361.jpg?w=740'
+]
+// index++ = [
+// index = index + 1  ||
+// index += 1
+// ]
+const Carousel = () => {
+
+  const [index, setIndex] = useState(0)
+
+  const next = () => {
+    if (index < images.length - 1) {
+      setIndex(index + 1)
+    } else {
+      setIndex(0)
+    }
+
+  }
+  const prev = () => {
+    if (index > 0) {
+      setIndex(index - 1)
+    } else {
+      setIndex(images.length - 1)
+    }
+  }
+
+  const setBullet = (indice) => {
+    setIndex(indice)
+  }
+
+  useEffect(() => {
+    let intervalID = setInterval(() => {
+      next()
+    }, 10000)
+
+    return () => {
+       /* console.log('Me desmonte') */
+      /* console.log('last time: ' + hour) */
+      clearInterval(intervalID)
+    }
+
+  }, [index])
+
+
   return (
-    <>
-        <section>
-            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-                <ol className="carousel-indicators">
-                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true" aria-label="First slide"></li>
-                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-                    <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
-                </ol>
-                <div className="carousel-inner" role="listbox">
-                    <div className='imgcarousel1' className1="carousel-item active">
-                        {data.map((each,key)=><SlideCarousel key={key} src={each.src} alt={each.alt}/>)}
-                        
-                        
-                    </div>
-                    <div className='imgcarousel2' className2="carousel-item">
-                        {data.map((each,key)=><SlideCarousel2 key={key} src={each.src} alt={each.alt}/>)}
-                        
-                        
-                    </div>
-                    <div className='imgcarousel3' className3="carousel-item">
-                        {data.map((each,key)=><SlideCarousel3 key={key} src={each.src} alt={each.alt}/>)}
-                        
-                        
-                    </div>
-                    {/* <div className="carousel-item">
-                        <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="Second slide" ></img>
-                        <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="Second slide" ></img>
-                        <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="Second slide" ></img>
-                        <img className='imgcarousel2' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="Second slide" ></img>
-                        
-                    </div>
-                    <div className="carousel-item">
-                        <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="third slide" ></img>
-                        <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="third slide" ></img>
-                        <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="third slide" ></img>
-                        <img className='imgcarousel3' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRPa4pu-6tbBpkxe9Y3b8MjTOpUr2nsG-eVA&usqp=CAU" alt="third slide" ></img>
-                        
-                    </div>   */} 
-                        
-                    
-                    
+    <>  
+        <section className='container'>
+              <h2 className='carousel-title'>Popular MyTineraries</h2>
+              <div className="carousel">
+                <Arrow src="/flecha-atras.svg" alt='flecha-atras' fn={prev} />
+                <div className=''>
+                  <div className='carousel-imagenes'>
+                      <div className='imagenes'>
+                        <img className='' src={images[index]} alt="" />
+                        <h3>City X</h3>
+                      </div>
+                      <div className='imagenes'>
+                        <img className='' src={images1[index]} alt="" />
+                        <h3>City X</h3>
+                      </div>
+                      <div className='imagenes'>
+                        <img className='' src={images2[index]} alt="" />
+                        <h3>City X</h3>
+                      </div>
+                      <div className='imagenes'> 
+                        <img className='' src={images3[index]} alt="" />
+                        <h3>City X</h3> 
+                      </div>
+                  </div>
+                <div className='indicadores'>
+                    {
+                      images.map((item, indexMap) => {
+                        if (indexMap === index) return <span key={indexMap} className='cursor-pointer'>⚫</span>
+                        else return <span key={indexMap} className='cursor-pointer' onClick={() => setBullet(indexMap)}>⚪</span> // bind
+                      })
+                    }
+                  </div>
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
-            </div>
+                <Arrow src="/flecha-adelante.svg" alt='flecha-adelante' fn={next} />
+              </div>
         </section>
-    </>
-    
+              
+    </> 
   )
 }
 
-
+export default Carousel

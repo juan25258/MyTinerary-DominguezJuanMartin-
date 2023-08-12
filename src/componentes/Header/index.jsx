@@ -1,6 +1,7 @@
 import React from 'react'
 import Style from './Style.css'
-
+import { Link as LinkHeader } from 'react-router-dom'
+import Home from '../../pages/Home'
 
 
 export default function Header() {
@@ -8,11 +9,11 @@ export default function Header() {
     <header>
             <nav className="navbar">
                 <div className="container">
-                  <a href="#" className="a-MyTinerary"><h2>My Tinerary</h2></a> 
+                  <a href="#" className="a-MyTinerary"><h1>My Tinerary</h1></a> 
                   <div className="botonesnav">
-                    <button className="botonesnav1" type="button"><a href="#">Home</a></button>
-                    <button className="botonesnav2" type="button"><a href="" target="_blank">Cities</a> </button>
-                    <button type="button" className={"btn btn-primary"}> <a href="">Login</a></button>
+                    <button className="btn btn-secondary" type="button"><LinkHeader to="/">Home</LinkHeader></button>
+                    <button className="btn btn-secondary" type="button"><LinkHeader to="/Cities">Cities</LinkHeader></button>
+                    <button type="button" className="btn btn-primary"> <a href="">Login</a></button>
                   </div>
                 </div>
             </nav>

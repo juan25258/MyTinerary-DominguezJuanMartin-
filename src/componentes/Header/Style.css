@@ -1,12 +1,21 @@
+
+h1{
+  color: #f50707;
+  font-family: 'Dancing Script', cursive; 
+}
+
 div.botonesnav{
     display: flex;
     gap: 1rem;
   }
-  button.botonesnav1, button.botonesnav2{
-    background: #ffffff;
+button.btn.btn-secondary{
+    background: #4747a8;
     border: 0;
-  }
-  a{
+}
+a{
     text-decoration: none;
-    color: black;
-  }
+    color: rgb(255, 255, 255);
+}
+p{
+    color:#ff8c00;
+}

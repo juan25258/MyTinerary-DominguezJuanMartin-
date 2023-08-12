@@ -1,17 +1,50 @@
-section{
+.images{
     display: flex;
     justify-content: center;
-    min-height: 50vh;
 }
 
-
-div.carousel-item.active{
+h2.carousel-title{
     display: flex;
+    justify-content: center;
+    color: #12adc7;
+}
+.carousel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-imagenes{
+    display: flex;
+    gap: 3rem;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+img{
+    height: 250px;
+}
+div.flechas{
+    display: flex;
+    justify-content: center;
+}
+div.indicadores{
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    min-height: 4rem;
 }
-ol.carousel-indicators{
-    margin-bottom: -2rem;
+
+h3{
+    display: flex;
+    justify-content: center;
+    color: #ff8c00;
 }
+section.container{
+@media (min-width: 1400px)
+{.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1700px;
+}
+}
+}
+
+
+    
