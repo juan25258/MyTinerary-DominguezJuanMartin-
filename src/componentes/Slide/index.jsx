@@ -11,9 +11,7 @@ export default function Slide({images}) {
                     <p>{images.country}</p>
                     <p>{images.city}</p>
                 </div>
-            </div>
-
-            
+            </div>    
         </>
       ))}
     </div>

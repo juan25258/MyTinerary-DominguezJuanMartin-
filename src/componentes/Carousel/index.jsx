@@ -5,7 +5,6 @@ import Style from './Style.css'
 
 const images = [
 [
-
   {
     country: 'País 1',
     city: 'Ciudad 1',
@@ -27,9 +26,7 @@ const images = [
     image: 'https://img.freepik.com/fotos-premium/puente-madera-traves-rio-temporada-otono_211251-361.jpg?w=740',
   },
 ],
-
 [
-
   {
     country: 'País 5',
     city: 'Ciudad 5',
@@ -51,9 +48,7 @@ const images = [
     image: 'https://img.freepik.com/foto-gratis/muelle-lago-hallstatt-austria_181624-44201.jpg?w=740&t=st=1691541587~exp=1691542187~hmac=addb04db5f0ea627202bc0c2b83f2ef56d694d91382f6d4fb914c7b9ff422fa8',
   },
 ],
-
 [
-
   {
     country: 'País 9',
     city: 'Ciudad 9',
@@ -76,7 +71,6 @@ const images = [
   },
 ],
 ]
-
 
 
 const Carousel = () => {
