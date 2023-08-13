@@ -62,12 +62,12 @@ const images = [
   {
     country: 'País 11',
     city: 'Ciudad 11',
-    image: 'https://images.unsplash.com/photo-1561488111-5d800fd56b8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2l1ZGFkZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+    image: 'https://img.freepik.com/foto-gratis/brillante-ciudad-nocturna_1127-8.jpg?size=626&ext=jpg&ga=GA1.1.574118789.1691526903&semt=sph',
   },
   {
     country: 'País 12',
     city: 'Ciudad 12',
-    image: 'https://images.unsplash.com/photo-1562595410-2cb999af24b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=726&q=80',
+    image: 'https://img.freepik.com/fotos-premium/coliseo-roma-sol-manana-italia_119101-11.jpg?w=740',
   },
 ],
 ]
