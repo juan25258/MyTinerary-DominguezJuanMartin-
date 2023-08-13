@@ -13,12 +13,17 @@ h2.carousel-title{
     justify-content: center;
     align-items: center;
 }
-.carousel-imagenes{
+div.slide{
     display: flex;
-    gap: 3rem;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .description {
+    text-align: center;
+    margin-top: 10px;
+  }
 img{
     height: 250px;
 }
