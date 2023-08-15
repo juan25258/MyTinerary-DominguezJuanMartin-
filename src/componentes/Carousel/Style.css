@@ -44,13 +44,16 @@ h3{
     justify-content: center;
     color: #ff8c00;
 }
-section.container{
+/* section.container{
 @media (min-width: 1400px)
 {.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1700px;
 }
 }
-}
+} */
+
+    
+  
 
 
     
