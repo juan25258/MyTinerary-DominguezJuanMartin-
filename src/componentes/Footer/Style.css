@@ -1,0 +1,19 @@
+#col1-footer{
+    padding: 2rem;
+    max-width: fit-content;
+}
+
+#col2-footer{
+    display: flex;
+    align-items: center;
+}
+
+.color-instagram{
+    color: rgb(122, 41, 199);
+}
+
+ul.social-medias{
+    display: flex;
+    padding: 2rem;
+    list-style: none;
+}
