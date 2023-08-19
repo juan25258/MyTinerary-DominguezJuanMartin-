@@ -4,7 +4,7 @@ import Slide from '../Slide'
 import Style from './Style.css'
 import axios from 'axios'
 
-const cities = [
+/* const cities = [
 [
   {
     id:"1",
@@ -83,12 +83,22 @@ const cities = [
     image: 'https://img.freepik.com/fotos-premium/coliseo-roma-sol-manana-italia_119101-11.jpg?w=740',
   },
 ],
-] 
-
+]  */
 
 const Carousel = () => {
 
   const [index, setIndex] = useState(0)
+  const [cities, setCities] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/Cities')
+      .then(response => {
+        setCities(response.data)
+      })
+      .catch(error => {
+        console.error('There was an error!', error);
+      });
+  }, [])
 
   const next = () => {
     if (index < cities.length - 1) {
@@ -131,10 +141,12 @@ const Carousel = () => {
               <div className="carousel">
                 <Arrow src="/flecha-atras.svg" alt='flecha-atras' fn={prev} />
                 <div className=''>
-                  <div className='carousel-imagenes'>
-                  <Slide cities={cities[index]} />
-                  </div>
-                <div className='indicadores'>
+                  {cities[index] && ( // Verificar antes de renderizar
+                    <div className='carousel-imagenes'>
+                      <Slide city={cities[index]} />
+                    </div>
+                  )}
+                  <div className='indicadores'>
                     {
                       cities.map((item, indexMap) => {
                         if (indexMap === index) return <span key={indexMap} className='cursor-pointer'>⚫</span>
@@ -146,9 +158,8 @@ const Carousel = () => {
                 <Arrow src="/flecha-adelante.svg" alt='flecha-adelante' fn={next} />
               </div>
         </section>
-              
     </> 
   )
 }
 
-export default Carousel
+export default Carousel;
