@@ -1,17 +1,15 @@
-import React from 'react'
-
-export default function Slide({city}) {
+export default function Slide({cities}) {
   return (
     <div className="slide">
-        {city && (
-            <div className='cities'>
-                <img src={city.image} alt={city.name} />
-                <div className="description">
-                    <p>{city.country}</p>
-                    <p>{city.name}</p>
-                </div>
-            </div> 
-        )}
+      {cities.map((city, index) => (
+        <div className='cities' key={index}>
+          <img src={city.image} alt={`Slide ${index + 1}`} />
+          <div className="description">
+            <p>{city.country}</p>
+            <p>{city.name}</p>
+          </div>
+        </div>    
+      ))}
     </div>
   )
 }

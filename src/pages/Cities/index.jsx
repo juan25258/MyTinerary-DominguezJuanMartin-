@@ -1,23 +1,49 @@
-import React, { Fragment } from 'react'
-import Styles from './Styles.css'
+import React, { useEffect, useState } from 'react';
 
 export default function Cities() {
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    fetchCities();
+  }, []);
+
+  const fetchCities = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/Cities');
+      const data = await response.json();
+      setCities(data);
+    } catch (error) {
+      console.error('Error fetching cities:', error);
+    }
+  };
+
   return (
     <>
       <main>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
+        <nav className="navbar bg-body-tertiary">
+          <div className="container-fluid">
+            <form className="d-flex" role="search">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <button className="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
         </nav>
-        <article className='City .container'>
+        <article className="City container">
           <h2>Cities</h2>
+          <div className="card-deck d-flex flex-wrap gap-5">
+            {cities.map(city => (
+              <div className="card" style={{ width: '18rem' }} key={city.id}>
+                <img src={city.image} className="card-img-top" alt={city.name} />
+                <div className="card-body">
+                  <h5 className="card-title">{city.name}</h5>
+                  <p className="card-text">{city.details}</p>
+                  <a href="#" className="btn btn-primary">Details</a>
+                </div>
+              </div>
+            ))}
+          </div>
         </article>
-        
-      </main>   
+      </main>
     </>
-  )
+  );
 }
