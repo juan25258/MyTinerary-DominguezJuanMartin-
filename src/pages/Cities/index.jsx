@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Style from './Style.css'
 
 export default function Cities() {
   const [cities, setCities] = useState([]);
@@ -29,10 +30,10 @@ export default function Cities() {
           </div>
         </nav>
         <article className="City container">
-          <h2>Cities</h2>
-          <div className="card-deck d-flex flex-wrap gap-5">
+          <h2 className='d-flex ' >Cities</h2>
+          <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
             {cities.map(city => (
-              <div className="card" style={{ width: '18rem' }} key={city.id}>
+              <div className="card" key={city.id}>
                 <img src={city.image} className="card-img-top" alt={city.name} />
                 <div className="card-body">
                   <h5 className="card-title">{city.name}</h5>

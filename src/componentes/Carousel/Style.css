@@ -27,6 +27,7 @@ div.slide{
   }
 img{
     height: 250px;
+    width: 320px;
 }
 div.flechas{
     display: flex;

@@ -51,7 +51,10 @@ const Carousel = () => {
   useEffect(() => {
     let intervalID = setInterval(() => {
       next()
-    }, 5000)
+      next() //con esto hago que el autoavance comience luego de cambiar por primera vez el slide
+    }, 
+    5000
+    )
 
     return () => {
       clearInterval(intervalID)

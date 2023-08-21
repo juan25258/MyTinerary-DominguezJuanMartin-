@@ -5,12 +5,12 @@ main{
 div.container-fluid{
     justify-content: center !important
 }
-.City{
+/* .City{
     display: flex;
     justify-content: center;
     height: 80vh;
     align-items: center;
-}
+} */
 nav.navbar.bg-body-tertiary{
     background: radial-gradient(black, transparent);
 }
@@ -18,5 +18,5 @@ h2{
     color: rgb(182, 26, 26);
 }
 div.card{
-    width: 18rem !important;
+    width: 16rem !important;
 }
