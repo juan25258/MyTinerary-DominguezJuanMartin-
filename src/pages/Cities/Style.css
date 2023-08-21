@@ -1,9 +1,9 @@
-main{
-    min-height: 80vh;
-    align-items: center;
+main {
+  min-height: 80vh;
+  align-items: center;
 }
-div.container-fluid{
-    justify-content: center !important
+div.container-fluid {
+  justify-content: center !important;
 }
 /* .City{
     display: flex;
@@ -11,12 +11,31 @@ div.container-fluid{
     height: 80vh;
     align-items: center;
 } */
-nav.navbar.bg-body-tertiary{
-    background: radial-gradient(black, transparent);
+nav.navbar.bg-body-tertiary {
+  background: radial-gradient(black, transparent);
 }
-h2{
-    color: rgb(182, 26, 26);
+h2 {
+  color: rgb(182, 26, 26);
 }
-div.card{
-    width: 16rem !important;
+div.card {
+  width: 16rem !important;
+}
+
+@media (max-width: 575px) {
+  nav.navbar {
+    padding-left: 2rem;
+  }
+  form.d-flex {
+    display: flex;
+    position: relative;
+    margin-left: -5rem;
+  }
+  img.logo-Mytinerary {
+   margin-left: -3rem;
+  }
+
+  img.card-img-top {
+    object-fit: contain;
+    width: auto;
+  }
 }

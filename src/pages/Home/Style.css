@@ -15,8 +15,11 @@ article{
 div.logo{
     display: flex;
     /* width: 50vw; */
+    
 }
 img.logo-Mytinerary{
   border-radius: 8rem;
+  height: 250px;
+  width: 250px;
 }
   
