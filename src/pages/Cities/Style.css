@@ -18,7 +18,7 @@ h2 {
   color: rgb(182, 26, 26);
 }
 div.card {
-  width: 16rem !important;
+  width: 20rem !important;
 }
 
 @media (max-width: 575px) {

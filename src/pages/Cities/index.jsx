@@ -13,7 +13,7 @@ export default function Cities() {
   const fetchCities = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/Cities?filter=${filter}`
+        `http://localhost:5000/api/Cities?filter=${filter}`
       );
       const data = await response.json();
       setCities(data);

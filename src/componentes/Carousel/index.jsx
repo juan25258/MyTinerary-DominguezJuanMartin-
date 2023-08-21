@@ -11,7 +11,7 @@ const Carousel = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/Cities")
+      .get("http://localhost:5000/api/Cities")
       .then((response) => {
         setCities(response.data);
         setGroupedCities(groupByFour(response.data));
