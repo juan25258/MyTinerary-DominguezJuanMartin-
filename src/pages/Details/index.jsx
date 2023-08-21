@@ -1,5 +1,5 @@
-import React from 'react'
-import Style from './Style.css'
+import React from "react";
+import Style from "./Style.css";
 
 export default function Details() {
   return (
@@ -8,9 +8,5 @@ export default function Details() {
         <div>In construction</div>
       </main>
     </>
-    
-    
-  )
+  );
 }
-
-

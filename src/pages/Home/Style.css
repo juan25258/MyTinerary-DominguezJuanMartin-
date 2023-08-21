@@ -1,25 +1,23 @@
-main.container{
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    margin: auto;
-    padding: 3rem 7rem 2rem 2rem;
-    position: relative;
-  }
-article{
+main.container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin: auto;
+  padding: 3rem 7rem 2rem 2rem;
+  position: relative;
+}
+article {
   width: 90%;
   /* display: flex;
   justify-content: center;
-  flex-wrap: wrap; */     
+  flex-wrap: wrap; */
 }
-div.logo{
-    display: flex;
-    /* width: 50vw; */
-    
+div.logo {
+  display: flex;
+  /* width: 50vw; */
 }
-img.logo-Mytinerary{
+img.logo-Mytinerary {
   border-radius: 8rem;
   height: 250px;
   width: 250px;
 }
-  
