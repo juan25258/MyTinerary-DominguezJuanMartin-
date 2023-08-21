@@ -3,19 +3,24 @@ import Style from './Style.css'
 
 export default function Cities() {
   const [cities, setCities] = useState([]);
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     fetchCities();
-  }, []);
+  }, [filter]);
 
   const fetchCities = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/Cities');
+      const response = await fetch(`http://localhost:8080/api/Cities?filter=${filter}`);
       const data = await response.json();
       setCities(data);
     } catch (error) {
       console.error('Error fetching cities:', error);
     }
+  };
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value);
   };
 
   return (
@@ -24,7 +29,7 @@ export default function Cities() {
         <nav className="navbar bg-body-tertiary">
           <div className="container-fluid">
             <form className="d-flex" role="search">
-              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+              <input className="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search" onChange={handleFilterChange} value={filter}/>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
