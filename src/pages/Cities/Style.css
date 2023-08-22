@@ -9,7 +9,6 @@ div.container-fluid {
 nav.navbar.bg-body-tertiary {
   background: radial-gradient(#58151c, #380909);
 }
-var(--bs-danger-text-emphasis), #380909);
 h2 {
   color: rgb(182, 26, 26);
 }
