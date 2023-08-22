@@ -1,19 +1,15 @@
 main {
   min-height: 80vh;
   align-items: center;
+  margin-bottom: 3rem;
 }
 div.container-fluid {
   justify-content: center !important;
 }
-/* .City{
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    align-items: center;
-} */
 nav.navbar.bg-body-tertiary {
-  background: radial-gradient(black, transparent);
+  background: radial-gradient(#58151c, #380909);
 }
+var(--bs-danger-text-emphasis), #380909);
 h2 {
   color: rgb(182, 26, 26);
 }
