@@ -16,7 +16,7 @@ export default function Home() {
               been easier.
             </p>
             <button type="button" class="btn btn-primary">
-              <LinkHeader to="/Cities">View More</LinkHeader>
+              <LinkHeader id="btn-article" to="/Cities">View More</LinkHeader>
             </button>
           </article>
         </div>
