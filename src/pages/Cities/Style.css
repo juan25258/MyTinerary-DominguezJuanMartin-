@@ -1,0 +1,36 @@
+main {
+  min-height: 80vh;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+div.container-fluid {
+  justify-content: center !important;
+}
+nav.navbar.bg-body-tertiary {
+  background: radial-gradient(#58151c, #380909);
+}
+h2 {
+  color: rgb(182, 26, 26);
+}
+div.card {
+  width: 20rem !important;
+}
+
+@media (max-width: 575px) {
+  nav.navbar {
+    padding-left: 2rem;
+  }
+  form.d-flex {
+    display: flex;
+    position: relative;
+    margin-left: -5rem;
+  }
+  img.logo-Mytinerary {
+    margin-left: -3rem;
+  }
+
+  img.card-img-top {
+    object-fit: contain;
+    width: auto;
+  }
+}
