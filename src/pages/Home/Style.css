@@ -28,10 +28,10 @@ img.logo-Mytinerary {
   }
 }
 
-/* Estilos para pantallas con ancho máximo de 280px */
+
 @media (max-width: 280px) {
   main.container {
-    padding: 1rem; /* Reduzco el padding para dar más espacio al contenido */
+    padding: 1rem; 
     display: flex;
     align-items: center;
     min-height: 75vh;
@@ -44,11 +44,11 @@ img.logo-Mytinerary {
     padding-left: 2rem;
   }
   article {
-    width: 100%; /* El contenido ocupará todo el ancho disponible */
+    width: 100%; 
   }
 
   img.logo-Mytinerary {
-    height: 150px; /* Reduzco el tamaño del logo para que quepa mejor */
+    height: 150px; 
     width: 150px;
     margin-left: 0rem;
   }

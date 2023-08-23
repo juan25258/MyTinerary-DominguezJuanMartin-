@@ -33,17 +33,17 @@ div.card {
   }
 }
 
-/* Estilos para pantallas con ancho máximo de 280px */
+
 @media (max-width: 280px) {
 
   nav.navbar.bg-body-tertiary {
-    padding-left: 5rem; /* Reduzco el espacio en la izquierda del navbar */
+    padding-left: 5rem; 
   }
 
   form.d-flex {
     display: flex;
-    flex-direction: column; /* Cambio la dirección del formulario a columna */
-    align-items: center; /* Centra los elementos verticalmente */
+    flex-direction: column; 
+    align-items: center; 
     gap: 1rem;
     margin-left: -4rem;
   }
