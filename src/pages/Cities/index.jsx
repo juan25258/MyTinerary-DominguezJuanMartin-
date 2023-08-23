@@ -107,7 +107,7 @@ export default function Cities() {
                   </h5>
                   <p className="card-text">{city.details}</p>
                   <a href="#" className="btn btn-primary">
-                    <LinkDetails to="/Details">Details</LinkDetails>{" "}
+                    <LinkDetails id="btn-card" to="/Details">Details</LinkDetails>{" "}
                   </a>
                 </div>
               </div>

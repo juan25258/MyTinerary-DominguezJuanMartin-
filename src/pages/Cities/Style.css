@@ -15,6 +15,9 @@ h2 {
 div.card {
   width: 20rem !important;
 }
+#btn-card{
+  color: aliceblue;
+}
 
 @media (max-width: 575px) {
   
