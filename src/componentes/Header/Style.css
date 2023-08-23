@@ -18,3 +18,32 @@ a {
 p {
   color: #ff8c00;
 }
+
+@media (max-width: 280px) {
+  main.container {
+    padding: 1rem;
+  }
+
+  article {
+    width: 100%;
+  }
+
+  img.logo-Mytinerary {
+    height: 150px;
+    width: 150px;
+  }
+
+  /* Estilos para el encabezado */
+  header {
+    padding: 1rem;
+  }
+
+  div.botonesnav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  button.btn.btn-secondary {
+    width: 100%;
+  }
+}

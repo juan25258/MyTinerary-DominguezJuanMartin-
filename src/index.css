@@ -5,7 +5,7 @@
   background: #210f0f;
 }
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
   nav.navbar {
     padding-left: 2rem;
   }
@@ -36,4 +36,4 @@
   main.container {
     margin-left: 5rem;
   }
-}
+} */

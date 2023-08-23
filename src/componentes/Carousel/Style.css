@@ -45,3 +45,33 @@ h3 {
   justify-content: center;
   color: #ff8c00;
 }
+
+/* Estilos para pantallas con ancho máximo de 280px */
+@media (max-width: 280px) {
+  h2.carousel-title {
+    font-size: 1.5rem; /* Reduzco el tamaño del título */
+  }
+
+  div.carousel {
+    flex-direction: column; /* Cambio la dirección del carrusel a columna */
+    align-items: center;
+    gap: 1rem; /* Agrego espacio entre elementos */
+  }
+
+  div.slide {
+    gap: 1rem; /* Reduzco el espacio entre las imágenes */
+  }
+
+  img {
+    height: 100px; /* Reduzco el tamaño de las imágenes */
+    width: 150px; /* Ajusto el ancho automáticamente para mantener la proporción */
+  }
+
+  div.indicadores {
+    min-height: 2rem; /* Reduzco la altura de los indicadores */
+  }
+
+  span.cursor-pointer {
+    font-size: 1.2rem; /* Ajusto el tamaño de los indicadores */
+  }
+}

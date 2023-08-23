@@ -17,13 +17,11 @@ div.card {
 }
 
 @media (max-width: 575px) {
-  nav.navbar {
-    padding-left: 2rem;
-  }
+  
   form.d-flex {
     display: flex;
     position: relative;
-    margin-left: -5rem;
+    margin-left: 0rem;
   }
   img.logo-Mytinerary {
     margin-left: -3rem;
@@ -32,5 +30,21 @@ div.card {
   img.card-img-top {
     object-fit: contain;
     width: auto;
+  }
+}
+
+/* Estilos para pantallas con ancho máximo de 280px */
+@media (max-width: 280px) {
+
+  nav.navbar.bg-body-tertiary {
+    padding-left: 5rem; /* Reduzco el espacio en la izquierda del navbar */
+  }
+
+  form.d-flex {
+    display: flex;
+    flex-direction: column; /* Cambio la dirección del formulario a columna */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 1rem;
+    margin-left: -4rem;
   }
 }

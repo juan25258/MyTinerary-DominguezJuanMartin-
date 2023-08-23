@@ -1,5 +1,6 @@
 import React from "react";
 import Style from "./Style.css";
+import { Link as LinkHeader } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -12,17 +13,17 @@ export default function Footer() {
         <ul id="col2-footer" class="nav col-md-4 justify-content-center">
           <li class="nav-item">
             <a href="#" class="nav-link px-2">
-              Home
+              <LinkHeader to="/">Home</LinkHeader>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2">
-              Cities
+              <LinkHeader to="/Cities">Cities</LinkHeader>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link px-2">
-              Features
+              <LinkHeader to="/Details">Details</LinkHeader> 
             </a>
           </li>
           <li class="nav-item">

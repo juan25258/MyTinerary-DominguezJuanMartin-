@@ -8,16 +8,48 @@ main.container {
 }
 article {
   width: 90%;
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap; */
 }
 div.logo {
   display: flex;
-  /* width: 50vw; */
 }
 img.logo-Mytinerary {
   border-radius: 8rem;
   height: 250px;
   width: 250px;
+}
+
+@media (max-width:580px){
+  main.container{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    min-height: 50vh;
+    margin-left: 4rem;
+  }
+}
+
+/* Estilos para pantallas con ancho máximo de 280px */
+@media (max-width: 280px) {
+  main.container {
+    padding: 1rem; /* Reduzco el padding para dar más espacio al contenido */
+    display: flex;
+    align-items: center;
+    min-height: 75vh;
+    margin: auto;
+    position: relative;
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+  header{
+    padding-left: 2rem;
+  }
+  article {
+    width: 100%; /* El contenido ocupará todo el ancho disponible */
+  }
+
+  img.logo-Mytinerary {
+    height: 150px; /* Reduzco el tamaño del logo para que quepa mejor */
+    width: 150px;
+    margin-left: 0rem;
+  }
 }
