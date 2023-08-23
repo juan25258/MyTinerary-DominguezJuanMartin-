@@ -4,6 +4,9 @@
   box-sizing: border-box;
   background: #210f0f;
 }
+body{
+  background: #210f0f;
+}
 
 /* @media (max-width: 575px) {
   nav.navbar {

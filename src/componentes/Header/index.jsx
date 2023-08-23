@@ -13,14 +13,14 @@ export default function Header() {
           </a>
           <div className="botonesnav">
             <button className="btn btn-secondary" type="button">
-              <LinkHeader to="/">Home</LinkHeader>
+              <LinkHeader id="btn-nav" to="/">Home</LinkHeader>
             </button>
             <button className="btn btn-secondary" type="button">
-              <LinkHeader to="/Cities">Cities</LinkHeader>
+              <LinkHeader id="btn-nav" to="/Cities">Cities</LinkHeader>
             </button>
             <button type="button" className="btn btn-primary">
               {" "}
-              <a href="">Login</a>
+              <a id="btn-nav" href="">Login</a>
             </button>
           </div>
         </div>

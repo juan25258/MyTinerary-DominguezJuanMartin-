@@ -13,7 +13,10 @@ button.btn.btn-secondary {
 }
 a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
+}
+#btn-nav{
+  color: aliceblue;
 }
 p {
   color: #ff8c00;
