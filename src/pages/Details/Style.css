@@ -1,7 +1,11 @@
-Main {
+.mainCities{
   min-height: 80vh;
+  align-items: center;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
-div {
+div>h2 {
   color: chartreuse;
 }
