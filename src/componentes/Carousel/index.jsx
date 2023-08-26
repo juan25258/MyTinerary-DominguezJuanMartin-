@@ -15,6 +15,7 @@ const Carousel = () => {
       .then((response) => {
         setCities(response.data);
         setGroupedCities(groupByFour(response.data));
+        console.log(response.data);
       })
       .catch((error) => {
         console.error("There was an error!", error);

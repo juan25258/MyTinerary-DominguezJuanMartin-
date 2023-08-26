@@ -27,6 +27,7 @@ import React, { useState, useEffect } from "react";
 import Style from "./Style.css";
 import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
+import Card from "../../componentes/Card";
 
 export default function Cities() {
   const [cities, setCities] = useState([]);
@@ -38,6 +39,7 @@ export default function Cities() {
         `http://localhost:5000/api/cities?filter=${filter}`
       );
       setCities(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching cities:", error);
     }
@@ -93,7 +95,7 @@ export default function Cities() {
           <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
             {cities.map((city) => (
               <div className="card" key={city.id}>
-                <img
+                {/* <img
                   src={city.image}
                   className="card-img-top"
                   alt={city.name}
@@ -109,7 +111,8 @@ export default function Cities() {
                   <a href="#" className="btn btn-primary">
                     <LinkDetails id="btn-card" to="/Details">Details</LinkDetails>{" "}
                   </a>
-                </div>
+                </div> */}
+                <Card key={city.id} city={city} />
               </div>
             ))}
           </div>
