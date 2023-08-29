@@ -1,4 +1,4 @@
-import { createReducer } from "@reduxjs/toolkit";
+/* import { createReducer } from "@reduxjs/toolkit";
 import citiesActions from "../actions/cities";
 import cities from "../actions/cities";
 
@@ -26,7 +26,8 @@ const initialState = {
                 
               },
         }
-    ]
+    ],
+    filter: '',
 }
 
 const citiesReducer = createReducer(initialState, (builder)=>{
@@ -35,4 +36,27 @@ const citiesReducer = createReducer(initialState, (builder)=>{
     })
 })
 
-export default citiesReducer
+export default citiesReducer */
+
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  cities: [],
+  filter: '',
+};
+
+const citiesSlice = createSlice({
+  name: 'cities',
+  initialState,
+  reducers: {
+    setCities: (state, action) => {
+      state.cities = action.payload;
+    },
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
+  },
+});
+
+export const { setCities, setFilter } = citiesSlice.actions;
+export default citiesSlice.reducer;

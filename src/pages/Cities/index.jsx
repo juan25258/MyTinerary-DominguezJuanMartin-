@@ -28,20 +28,23 @@ import Style from "./Style.css";
 import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
 import Card from "../../componentes/Card";
+import { useDispatch, useSelector } from 'react-redux';
+import { setCities, setFilter } from '../../Store/reducers/cities';
 
 export default function Cities() {
-  const [cities, setCities] = useState([]);
-  const [filter, setFilter] = useState("");
+  const cities = useSelector((state) => state.cities.cities);
+  const filter = useSelector((state) => state.cities.filter);
+  const dispatch = useDispatch();
 
   const fetchCities = async () => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/cities?filter=${filter}`
       );
-      setCities(response.data);
+      dispatch(setCities(response.data));
       console.log(response.data);
     } catch (error) {
-      console.error("Error fetching cities:", error);
+      console.error('Error fetching cities:', error);
     }
   };
 
@@ -50,7 +53,7 @@ export default function Cities() {
   }, []);
 
   const handleFilterChange = (event) => {
-    setFilter(event.target.value);
+    dispatch(setFilter(event.target.value));
   };
 
   const handleSearchClick = () => {
@@ -58,8 +61,8 @@ export default function Cities() {
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault(); // Evita el comportamiento por defecto (por ejemplo, enviar un formulario)
+    if (event.key === 'Enter') {
+      event.preventDefault();
       handleSearchClick();
     }
   };

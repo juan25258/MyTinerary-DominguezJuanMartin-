@@ -12,7 +12,8 @@ import citiesReducer from "./reducers/cities";
 
 const store = configureStore({
     reducer:{
-        citiesReducer: citiesReducer
+        cities: citiesReducer,
+        //otros reducers
     }
 });
 
