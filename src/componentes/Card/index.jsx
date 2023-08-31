@@ -1,8 +1,20 @@
 // Card.js
 import React from "react";
+import { useDispatch } from "react-redux";
+import cities, { setFilter } from "../../Store/reducers/cities";
 import { Link as LinkDetails } from "react-router-dom";
+/* import { useHistory } from 'react-router-dom'; */
+import { setSelectedCity } from '../../Store/reducers/cities';
 
 export default function Card({ city }) {
+  /* const history = useHistory(); */
+  const dispatch = useDispatch();
+
+  const handleDetailsClick = () => {
+    //realizar las acciones que quiero que ocurran al hacer clic en el botón "Details"
+    dispatch(setSelectedCity(city));
+  };
+
   return (
     <div className="card">
       <img src={city.image} className="card-img-top" alt={city.name} />
@@ -14,11 +26,19 @@ export default function Card({ city }) {
           {city.name}
         </h5>
         <p className="card-text">{city.details}</p>
-        <a href="#" className="btn btn-primary">
-          <LinkDetails id="btn-card" to="/Details">
-            Details
-          </LinkDetails>{" "}
-        </a>
+
+        <LinkDetails
+          id="btn-card"
+          className="btn btn-primary"
+          to="/Details"
+          onClick={handleDetailsClick}
+        >
+          Details
+        </LinkDetails>
+
+        {/* <button id="btn-card" className="btn btn-primary" onClick={handleClick}>
+          Details
+        </button> */}
       </div>
     </div>
   );

@@ -43,6 +43,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   cities: [],
   filter: '',
+  selectedCity: null,
 };
 
 const citiesSlice = createSlice({
@@ -55,8 +56,12 @@ const citiesSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
+    setSelectedCity: (state, action) => {
+      state.selectedCity = action.payload;
+    }
   },
 });
 
-export const { setCities, setFilter } = citiesSlice.actions;
+export const { setCities, setFilter, setSelectedCity } = citiesSlice.actions;
+export const selectedCitySelector = (state) => state.cities.selectedCity;
 export default citiesSlice.reducer;

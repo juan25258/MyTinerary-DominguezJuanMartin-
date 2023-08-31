@@ -1,4 +1,4 @@
-import { createAction } from "@reduxjs/toolkit";
+/* import { createAction } from "@reduxjs/toolkit";
 
 const add_cities = createAction('add_cities', (objetos) => {
     return {
@@ -8,4 +8,4 @@ const add_cities = createAction('add_cities', (objetos) => {
 
 export default {
     add_cities
-}
+} */

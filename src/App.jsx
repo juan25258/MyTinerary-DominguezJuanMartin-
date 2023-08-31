@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* import { useState } from "react";
 import "./App.css";
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
@@ -22,17 +22,42 @@ const router = createBrowserRouter([
   {
     path: "/Details",
     element: <Layout />,
-    children: [{ path: "/Details", element: <Details /> }],
+    children: [{ path: "/Details/:id", element: <Details /> }],
   },
-]);
+]); */
 
-function App() {
-  const [count, setCount] = useState(0);
+//function App() {
+  /* const [count, setCount] = useState(0); */
 
-  return (
-    <>
+  //return (
+    {/* <>
       <RouterProvider router={router}></RouterProvider>
     </>
+  );
+}
+
+export default App;
+ */}
+//con la config de arriba tambien funciona, pero la de abajo es la mas reciente:
+
+import Layout from "./layouts/Layout"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Cities from './pages/Cities';
+import Details from './pages/Details';
+
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="Cities" element={<Cities />} />
+          <Route path="Details" element={<Details/>} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

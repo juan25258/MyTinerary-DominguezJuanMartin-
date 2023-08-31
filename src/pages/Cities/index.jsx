@@ -23,12 +23,11 @@ export default function Cities() {
   }; */
 //en el codigo de arriba usé fetch y en el de abajo axios(ambos funcionan bien):
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Style from "./Style.css";
-import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
 import Card from "../../componentes/Card";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { setCities, setFilter } from '../../Store/reducers/cities';
 
 export default function Cities() {
@@ -36,7 +35,7 @@ export default function Cities() {
   const filter = useSelector((state) => state.cities.filter);
   const dispatch = useDispatch();
 
-  const fetchCities = async () => {
+  const fetchCitiesData = async () => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/cities?filter=${filter}`
@@ -49,7 +48,7 @@ export default function Cities() {
   };
 
   useEffect(() => {
-    fetchCities();
+    fetchCitiesData();
   }, []);
 
   const handleFilterChange = (event) => {
@@ -57,7 +56,7 @@ export default function Cities() {
   };
 
   const handleSearchClick = () => {
-    fetchCities();
+    fetchCitiesData();
   };
 
   const handleKeyDown = (event) => {
@@ -65,6 +64,11 @@ export default function Cities() {
       event.preventDefault();
       handleSearchClick();
     }
+  };
+
+  const handleDetailsClick = (cityId) => {
+    // Aquí puedes realizar las acciones que desees al hacer clic en el botón "Details"
+    console.log(`Details clicked for city with ID: ${cityId}`);
   };
 
   return (
@@ -98,24 +102,7 @@ export default function Cities() {
           <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
             {cities.map((city) => (
               <div className="card" key={city.id}>
-                {/* <img
-                  src={city.image}
-                  className="card-img-top"
-                  alt={city.name}
-                />
-                <div className="card-body">
-                  <h5 className="card-title d-flex justify-content-center">
-                    {city.country}
-                  </h5>
-                  <h5 className="card-title d-flex justify-content-center">
-                    {city.name}
-                  </h5>
-                  <p className="card-text">{city.details}</p>
-                  <a href="#" className="btn btn-primary">
-                    <LinkDetails id="btn-card" to="/Details">Details</LinkDetails>{" "}
-                  </a>
-                </div> */}
-                <Card key={city.id} city={city} />
+                <Card key={city.id} city={city} handleDetailsClick={handleDetailsClick} />
               </div>
             ))}
           </div>
