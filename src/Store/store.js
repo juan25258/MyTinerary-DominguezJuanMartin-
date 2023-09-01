@@ -7,14 +7,18 @@ export const store = configureStore({
     }
 })  */
 
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import citiesReducer from "./reducers/cities";
+import itinerariesReducer from "./reducers/itineraries";
+
+
+const rootReducer = combineReducers({
+    cities: citiesReducer,
+    itineraries: itinerariesReducer, // Agrega el reducer de itinerarios al root reducer
+  });
 
 const store = configureStore({
-    reducer:{
-        cities: citiesReducer,
-        //otros reducers
-    }
+    reducer: rootReducer
 });
 
 export default store;

@@ -68,6 +68,7 @@ export default function Cities() {
 
   const handleDetailsClick = (cityId) => {
     // Aquí puedes realizar las acciones que desees al hacer clic en el botón "Details"
+    dispatch(setSelectedCity(city));
     console.log(`Details clicked for city with ID: ${cityId}`);
   };
 
