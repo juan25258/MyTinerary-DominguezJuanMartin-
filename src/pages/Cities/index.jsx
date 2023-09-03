@@ -27,24 +27,43 @@ import React, { useState, useEffect } from "react";
 import Style from "./Style.css";
 import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import citiesReducer from "../../Store/reducers/cities";
+import citiesActions from "../../Store/actions/cities";
+import { useDispatch } from "react-redux";
+import { store } from "../../Store/store";
 
 export default function Cities() {
-  const [cities, setCities] = useState([]);
-  const [filter, setFilter] = useState("");
+  let [cities, setCities] = useState([]);
+  let [filter, setFilter] = useState("");
+  let citiesReducer = useSelector((store) => store.citiesReducer);
+  console.log(citiesReducer);
 
   const fetchCities = async () => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/cities?filter=${filter}`
       );
+      console.log();
       setCities(response.data);
+      dispatch(citiesActions.add_cities(response.data));
     } catch (error) {
       console.error("Error fetching cities:", error);
     }
   };
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchCities();
+    axios
+      .get(`http://localhost:5000/api/cities?filter=${filter}`)
+      .then((response) => {
+        setCities(response.data);
+        dispatch(citiesActions.add_cities(response.data));
+      })
+      .catch((error) => {
+        console.error("Error fetching cities:", error);
+      });
   }, []);
 
   const handleFilterChange = (event) => {
@@ -106,9 +125,9 @@ export default function Cities() {
                     {city.name}
                   </h5>
                   <p className="card-text">{city.details}</p>
-                  <a href="#" className="btn btn-primary">
-                    <LinkDetails to="/Details">Details</LinkDetails>{" "}
-                  </a>
+                  <LinkDetails className="btn btn-primary" to="/Details">
+                    Details
+                  </LinkDetails>{" "}
                 </div>
               </div>
             ))}
