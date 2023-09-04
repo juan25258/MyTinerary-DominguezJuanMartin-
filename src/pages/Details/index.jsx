@@ -110,7 +110,9 @@ export default function Details() {
         ) : (
           itineraries.map((itinerary) => (
             <div key={itinerary._id}>
-              <p>{itinerary.Price}</p>
+              <p>Price: ${itinerary.Price}</p>
+              <p>Likes: {itinerary.Likes}</p>
+              <p>Hashtags: {itinerary.Hashtag}</p>
             </div>
           ))
         )}
