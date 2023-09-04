@@ -65,6 +65,9 @@ const citiesSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
+    setSelectedCity: (state, action) => {
+      state.selectedCity = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder

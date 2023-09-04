@@ -46,7 +46,7 @@ export default function Details() {
       if (selectedCity) {
         try {
           const response = await axios.get(
-            `http://localhost:5000/api/itineraries?cityId=${selectedCity.id}`
+            `http://localhost:5000/api/cities?filter=${selectedCity.id}`
           );
           dispatch(setItineraries(response.data));
           console.log(response.data);
