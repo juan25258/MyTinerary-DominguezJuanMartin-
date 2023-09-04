@@ -29,17 +29,34 @@ import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import citiesReducer from "../../Store/reducers/cities";
-import citiesActions from "../../Store/actions/cities";
+//import citiesActions from "../../Store/actions/cities";
 import { useDispatch } from "react-redux";
 import { store } from "../../Store/store";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+
+const fetchCitiesAsync = createAsyncThunk(
+  "cities/fetchCities",
+  async (filter) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/api/cities?filter=${filter}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching cities:", error);
+      throw error;
+    }
+  }
+);
 
 export default function Cities() {
   let [cities, setCities] = useState([]);
   let [filter, setFilter] = useState("");
-  let citiesReducer = useSelector((store) => store.citiesReducer);
-  console.log(citiesReducer);
+  // let citiesReducer = useSelector((store) => store.citiesReducer); 
+  //console.log(citiesReducer);
 
-  const fetchCities = async () => {
+  /* const fetchCities = async () => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/cities?filter=${filter}`
@@ -50,11 +67,11 @@ export default function Cities() {
     } catch (error) {
       console.error("Error fetching cities:", error);
     }
-  };
+  }; */
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  /* useEffect(() => {
     axios
       .get(`http://localhost:5000/api/cities?filter=${filter}`)
       .then((response) => {
@@ -64,20 +81,31 @@ export default function Cities() {
       .catch((error) => {
         console.error("Error fetching cities:", error);
       });
-  }, []);
+  }, []); */
+
+  useEffect(() => {
+       dispatch(fetchCitiesAsync(filter))
+         .unwrap()
+         .then((response) => {
+           setCities(response);
+         })
+         .catch((error) => {
+           console.error("Error fetching cities:", error);
+         });
+     }, [dispatch, filter]);
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
   };
 
-  const handleSearchClick = () => {
-    fetchCities();
-  };
+/*   const handleSearchClick = () => {
+    //fetchCities();
+  }; */
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Evita el comportamiento por defecto (por ejemplo, enviar un formulario)
-      handleSearchClick();
+      //handleSearchClick();
     }
   };
 
@@ -100,7 +128,7 @@ export default function Cities() {
               <button
                 className="btn btn-outline-success"
                 type="button"
-                onClick={handleSearchClick}
+                //onClick={handleSearchClick}
               >
                 Search
               </button>
