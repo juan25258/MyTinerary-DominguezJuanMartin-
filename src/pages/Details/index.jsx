@@ -75,7 +75,7 @@ export default function Details() {
       <h1>Itinerary</h1>
       {itineraries.map((itinerary) => (
         <div key={itinerary.id}>
-          {/* Renderizar los datos del itinerario aquí */}
+          <p>{itinerary.Price}</p>
         </div>
       ))}
     </div>

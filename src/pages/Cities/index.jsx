@@ -29,10 +29,13 @@ import axios from "axios";
 import Card from "../../componentes/Card";
 import { useSelector, useDispatch } from 'react-redux';
 import { setCities, setFilter } from '../../Store/reducers/cities';
+import { fetchCities } from "../../Store/reducers/cities";
 
 export default function Cities() {
   const cities = useSelector((state) => state.cities.cities);
   const filter = useSelector((state) => state.cities.filter);
+  const status = useSelector((state) => state.cities.status);
+  const error = useSelector((state) => state.cities.error);
   const dispatch = useDispatch();
 
   const fetchCitiesData = async () => {
@@ -48,15 +51,15 @@ export default function Cities() {
   };
 
   useEffect(() => {
-    fetchCitiesData();
-  }, []);
+    dispatch(fetchCities(filter));
+  }, [filter, dispatch]);
 
   const handleFilterChange = (event) => {
     dispatch(setFilter(event.target.value));
   };
 
   const handleSearchClick = () => {
-    fetchCitiesData();
+    dispatch(fetchCities(filter));
   };
 
   const handleKeyDown = (event) => {
@@ -68,9 +71,12 @@ export default function Cities() {
 
   const handleDetailsClick = (cityId) => {
     // Aquí puedes realizar las acciones que desees al hacer clic en el botón "Details"
-    dispatch(setSelectedCity(city));
     console.log(`Details clicked for city with ID: ${cityId}`);
   };
+
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <>
