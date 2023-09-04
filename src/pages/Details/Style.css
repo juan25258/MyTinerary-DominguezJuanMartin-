@@ -9,3 +9,8 @@
 div>h2 {
   color: chartreuse;
 }
+
+div.card.mb-3{
+  display: contents;
+
+}
