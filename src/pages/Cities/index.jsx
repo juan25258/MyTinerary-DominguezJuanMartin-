@@ -53,35 +53,9 @@ const fetchCitiesAsync = createAsyncThunk(
 export default function Cities() {
   let [cities, setCities] = useState([]);
   let [filter, setFilter] = useState("");
-  // let citiesReducer = useSelector((store) => store.citiesReducer); 
-  //console.log(citiesReducer);
 
-  /* const fetchCities = async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:5000/api/cities?filter=${filter}`
-      );
-      console.log();
-      setCities(response.data);
-      dispatch(citiesActions.add_cities(response.data));
-    } catch (error) {
-      console.error("Error fetching cities:", error);
-    }
-  }; */
 
   const dispatch = useDispatch();
-
-  /* useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/cities?filter=${filter}`)
-      .then((response) => {
-        setCities(response.data);
-        dispatch(citiesActions.add_cities(response.data));
-      })
-      .catch((error) => {
-        console.error("Error fetching cities:", error);
-      });
-  }, []); */
 
   useEffect(() => {
        dispatch(fetchCitiesAsync(filter))
@@ -98,14 +72,10 @@ export default function Cities() {
     setFilter(event.target.value);
   };
 
-/*   const handleSearchClick = () => {
-    //fetchCities();
-  }; */
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Evita el comportamiento por defecto (por ejemplo, enviar un formulario)
-      //handleSearchClick();
     }
   };
 
@@ -125,13 +95,13 @@ export default function Cities() {
                 onKeyDown={handleKeyDown}
                 value={filter}
               />
-              <button
+              {/* <button
                 className="btn btn-outline-success"
                 type="button"
                 //onClick={handleSearchClick}
               >
                 Search
-              </button>
+              </button> */}
             </form>
           </div>
         </nav>

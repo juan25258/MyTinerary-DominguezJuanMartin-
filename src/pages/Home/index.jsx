@@ -15,7 +15,7 @@ export default function Home() {
               a host of itinerary options, planning your next trip has never
               been easier.
             </p>
-            <button type="button" class="btn btn-primary">
+            <button type="button" className="btn btn-primary">
               <LinkHeader id="btn-article" to="/Cities">View More</LinkHeader>
             </button>
           </article>
