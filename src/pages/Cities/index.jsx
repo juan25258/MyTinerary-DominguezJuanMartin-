@@ -27,12 +27,13 @@ import React, { useState, useEffect } from "react";
 import Style from "./Style.css";
 import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import citiesReducer from "../../Store/reducers/cities";
+//import { useSelector } from "react-redux";
+//import citiesReducer from "../../Store/reducers/cities";
 //import citiesActions from "../../Store/actions/cities";
-import { useDispatch } from "react-redux";
-import { store } from "../../Store/store";
+import { useDispatch, useSelector } from "react-redux";
+//import { store } from "../../Store/store";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+
 
 
 const fetchCitiesAsync = createAsyncThunk(
@@ -53,8 +54,8 @@ const fetchCitiesAsync = createAsyncThunk(
 export default function Cities() {
   let [cities, setCities] = useState([]);
   let [filter, setFilter] = useState("");
-
-
+ 
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -70,6 +71,10 @@ export default function Cities() {
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
+    dispatch(fetchCitiesAsync(event.target.value)).catch((error) => {
+      console.error("Error fetching cities:", error);
+      setError(error);
+    });
   };
 
 
