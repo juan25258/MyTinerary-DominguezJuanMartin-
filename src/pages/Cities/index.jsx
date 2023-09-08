@@ -36,6 +36,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
 
+
+
 const fetchCitiesAsync = createAsyncThunk(
   "cities/fetchCities",
   async (filter) => {
@@ -54,7 +56,7 @@ const fetchCitiesAsync = createAsyncThunk(
 export default function Cities() {
   let [cities, setCities] = useState([]);
   let [filter, setFilter] = useState("");
- 
+  
   
   const dispatch = useDispatch();
 

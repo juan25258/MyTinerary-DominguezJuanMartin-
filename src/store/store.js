@@ -3,6 +3,7 @@ import citiesReducer from "./reducers/cities";
 
 export const store = configureStore({
     reducer:{
-        citiesReducer: citiesReducer
-    }
+        cities: citiesReducer
+    },
+    devTools: true, //habilita las opciones de desarrollador en redux dev tools
 })

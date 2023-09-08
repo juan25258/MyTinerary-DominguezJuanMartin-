@@ -21,10 +21,6 @@ return {
 }
 }) */
 
-
-
-
-
 const citiesActions = { add_cities }
 
 export default citiesActions
