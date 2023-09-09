@@ -8,7 +8,7 @@ export const store = configureStore({
 })  */
 
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import citiesReducer from "./reducers/cities";
+import citiesReducer from "../Store/reducers/cities";
 import itinerariesReducer from "./reducers/itineraries";
 
 
