@@ -110,6 +110,7 @@ export default function Details() {
         ) : (
           itineraries.map((itinerary) => (
             <div key={itinerary._id}>
+              <img src={itinerary.image} className="card-img-top" alt={itinerary.name}/>
               <p>Price: ${itinerary.Price}</p>
               <p>Likes: {itinerary.Likes}</p>
               <p>Hashtags: {itinerary.Hashtag}</p>
