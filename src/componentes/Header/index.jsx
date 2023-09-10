@@ -2,6 +2,8 @@ import React from "react";
 import Style from "./Style.css";
 import { Link as LinkHeader } from "react-router-dom";
 import Home from "../../pages/Home";
+import ButtonLogin from "../buttonLogin";
+
 
 export default function Header() {
   return (
@@ -13,15 +15,24 @@ export default function Header() {
           </a>
           <div className="botonesnav">
             <button className="btn btn-secondary" type="button">
-              <LinkHeader id="btn-nav" to="/">Home</LinkHeader>
+              <LinkHeader id="btn-nav" to="/">
+                Home
+              </LinkHeader>
             </button>
             <button className="btn btn-secondary" type="button">
-              <LinkHeader id="btn-nav" to="/Cities">Cities</LinkHeader>
+              <LinkHeader id="btn-nav" to="/Cities">
+                Cities
+              </LinkHeader>
             </button>
-            <button type="button" className="btn btn-primary">
+            {/*             <button type="button" className="btn btn-primary">
               {" "}
-              <a id="btn-nav" href="">Login</a>
-            </button>
+              <a id="btn-nav" href="">
+                Login
+              </a>
+            </button> */}
+            <ButtonLogin />
+            
+
           </div>
         </div>
       </nav>

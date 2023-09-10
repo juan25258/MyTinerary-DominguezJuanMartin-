@@ -1,37 +1,8 @@
-/* import React, { useEffect, useState } from "react";
-import Style from "./Style.css";
-import { Link as LinkDetails } from "react-router-dom";
-
-export default function Cities() {
-  const [cities, setCities] = useState([]);
-  const [filter, setFilter] = useState("");
-
-  useEffect(() => {
-    fetchCities();
-  }, [filter]);
-
-  const fetchCities = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:5000/api/Cities?filter=${filter}`
-      );
-      const data = await response.json();
-      setCities(data);
-    } catch (error) {
-      console.error("Error fetching cities:", error);
-    }
-  }; */
-//en el codigo de arriba usé fetch y en el de abajo axios(ambos funcionan bien):
-
 import React, { useState, useEffect } from "react";
 import Style from "./Style.css";
 import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
-//import { useSelector } from "react-redux";
-//import citiesReducer from "../../Store/reducers/cities";
-//import citiesActions from "../../Store/actions/cities";
 import { useDispatch, useSelector } from "react-redux";
-//import { store } from "../../Store/store";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import selectedCityReducer from "../../store/reducers/selectedCity";
 import selectedCityActions from "../../store/actions/selectedCity";
