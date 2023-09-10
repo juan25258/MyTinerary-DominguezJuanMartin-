@@ -33,10 +33,8 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 //import { store } from "../../Store/store";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
-
-
-
+import selectedCityReducer from "../../store/reducers/selectedCity";
+import selectedCityActions from "../../store/actions/selectedCity";
 
 const fetchCitiesAsync = createAsyncThunk(
   "cities/fetchCities",
@@ -56,20 +54,19 @@ const fetchCitiesAsync = createAsyncThunk(
 export default function Cities() {
   let [cities, setCities] = useState([]);
   let [filter, setFilter] = useState("");
-  
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-       dispatch(fetchCitiesAsync(filter))
-         .unwrap()
-         .then((response) => {
-           setCities(response);
-         })
-         .catch((error) => {
-           console.error("Error fetching cities:", error);
-         });
-     }, [dispatch, filter]);
+    dispatch(fetchCitiesAsync(filter))
+      .unwrap()
+      .then((response) => {
+        setCities(response);
+      })
+      .catch((error) => {
+        console.error("Error fetching cities:", error);
+      });
+  }, [dispatch, filter]);
 
   const handleFilterChange = (event) => {
     setFilter(event.target.value);
@@ -78,7 +75,6 @@ export default function Cities() {
       setError(error);
     });
   };
-
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -130,7 +126,13 @@ export default function Cities() {
                     {city.name}
                   </h5>
                   <p className="card-text">{city.details}</p>
-                  <LinkDetails className="btn btn-primary" to="/Details">
+                  <LinkDetails
+                    className="btn btn-primary"
+                    to="/Details"
+                    onClick={() =>
+                      dispatch(selectedCityActions.setSelectedCity(city))
+                    }
+                  >
                     Details
                   </LinkDetails>{" "}
                 </div>
