@@ -37,6 +37,8 @@ export default function Details() {
         </div>
 
         
+
+        
       </main>
       <section>
           <h2>{selectedCity.name} Itineraries</h2>
@@ -46,6 +48,7 @@ export default function Details() {
               <div key={itinerary.id}>
                 
                 <p>{itinerary.name}</p>
+                <img src={itinerary.image} alt="" />
                 
               </div>
             ))
