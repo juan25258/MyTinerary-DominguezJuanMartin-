@@ -32,7 +32,14 @@ export default function Cities() {
     dispatch(fetchCitiesAsync(filter))
       .unwrap()
       .then((response) => {
-        setCities(response);
+        // Filtrar por inicio de palabras antes de actualizar el estado
+        const filteredCities = response.filter((city) => {
+          return (
+            city.name.toLowerCase().startsWith(filter.toLowerCase()) ||
+            city.country.toLowerCase().startsWith(filter.toLowerCase())
+          );
+        });
+        setCities(filteredCities);
       })
       .catch((error) => {
         console.error("Error fetching cities:", error);
@@ -46,6 +53,9 @@ export default function Cities() {
       setError(error);
     });
   };
+  /* const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  }; */
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
