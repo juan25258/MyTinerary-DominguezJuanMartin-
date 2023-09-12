@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Style from "./Style.css";
+import { Link as LinkDetails } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { createAsyncThunk } from "@reduxjs/toolkit";
@@ -61,15 +62,6 @@ export default function Cities() {
       event.preventDefault(); // Evita el comportamiento por defecto (por ejemplo, enviar un formulario)
     }
   };
-
-  const handleDetailsClick = (cityId) => {
-    // Aquí puedes realizar las acciones que desees al hacer clic en el botón "Details"
-    console.log(`Details clicked for city with ID: ${cityId}`);
-  };
-
-  if (status === "failed") {
-    return <div>Error: {error}</div>;
-  }
 
   return (
     <>
