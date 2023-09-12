@@ -1,71 +1,64 @@
-/* import React, { useEffect, useState } from "react";
-import Style from "./Style.css";
-import { Link as LinkDetails } from "react-router-dom";
-
-export default function Cities() {
-  const [cities, setCities] = useState([]);
-  const [filter, setFilter] = useState("");
-
-  useEffect(() => {
-    fetchCities();
-  }, [filter]);
-
-  const fetchCities = async () => {
-    try {
-      const response = await fetch(
-        `http://localhost:5000/api/Cities?filter=${filter}`
-      );
-      const data = await response.json();
-      setCities(data);
-    } catch (error) {
-      console.error("Error fetching cities:", error);
-    }
-  }; */
-//en el codigo de arriba usé fetch y en el de abajo axios(ambos funcionan bien):
-
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./Style.css";
 import axios from "axios";
-import Card from "../../componentes/Card";
-import { useSelector, useDispatch } from 'react-redux';
-import { setCities, setFilter } from '../../Store/reducers/cities';
-import { fetchCities } from "../../Store/reducers/cities";
+import { useDispatch, useSelector } from "react-redux";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import selectedCityReducer from "../../store/reducers/selectedCity";
+import selectedCityActions from "../../store/actions/selectedCity";
 
-export default function Cities() {
-  const cities = useSelector((state) => state.cities.cities);
-  const filter = useSelector((state) => state.cities.filter);
-  const status = useSelector((state) => state.cities.status);
-  const error = useSelector((state) => state.cities.error);
-  const dispatch = useDispatch();
-
-  const fetchCitiesData = async () => {
+const fetchCitiesAsync = createAsyncThunk(
+  "cities/fetchCities",
+  async (filter) => {
     try {
       const response = await axios.get(
         `http://localhost:5000/api/cities?filter=${filter}`
       );
-      dispatch(setCities(response.data));
-      console.log(response.data);
+      return response.data;
     } catch (error) {
-      console.error('Error fetching cities:', error);
+      console.error("Error fetching cities:", error);
+      throw error;
     }
-  };
+  }
+);
+
+export default function Cities() {
+  let [cities, setCities] = useState([]);
+  let [filter, setFilter] = useState("");
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCities(filter));
-  }, [filter, dispatch]);
+    dispatch(fetchCitiesAsync(filter))
+      .unwrap()
+      .then((response) => {
+        // Filtrar por inicio de palabras antes de actualizar el estado
+        const filteredCities = response.filter((city) => {
+          return (
+            city.name.toLowerCase().startsWith(filter.toLowerCase()) ||
+            city.country.toLowerCase().startsWith(filter.toLowerCase())
+          );
+        });
+        setCities(filteredCities);
+      })
+      .catch((error) => {
+        console.error("Error fetching cities:", error);
+      });
+  }, [dispatch, filter]);
 
   const handleFilterChange = (event) => {
-    dispatch(setFilter(event.target.value));
+    setFilter(event.target.value);
+    dispatch(fetchCitiesAsync(event.target.value)).catch((error) => {
+      console.error("Error fetching cities:", error);
+      setError(error);
+    });
   };
-
-  const handleSearchClick = () => {
-    dispatch(fetchCities(filter));
-  };
+  /* const handleFilterChange = (event) => {
+    setFilter(event.target.value);
+  }; */
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      handleSearchClick();
+    if (event.key === "Enter") {
+      event.preventDefault(); // Evita el comportamiento por defecto (por ejemplo, enviar un formulario)
     }
   };
 
@@ -94,13 +87,13 @@ export default function Cities() {
                 onKeyDown={handleKeyDown}
                 value={filter}
               />
-              <button
+              {/* <button
                 className="btn btn-outline-success"
                 type="button"
-                onClick={handleSearchClick}
+                //onClick={handleSearchClick}
               >
                 Search
-              </button>
+              </button> */}
             </form>
           </div>
         </nav>
@@ -109,7 +102,29 @@ export default function Cities() {
           <div className="card-deck d-flex flex-wrap justify-content-center gap-5">
             {cities.map((city) => (
               <div className="card" key={city.id}>
-                <Card key={city.id} city={city} handleDetailsClick={handleDetailsClick} />
+                <img
+                  src={city.image}
+                  className="card-img-top"
+                  alt={city.name}
+                />
+                <div className="card-body">
+                  <h5 className="card-title d-flex justify-content-center">
+                    {city.country}
+                  </h5>
+                  <h5 className="card-title d-flex justify-content-center">
+                    {city.name}
+                  </h5>
+                  <p className="card-text">{city.details}</p>
+                  <LinkDetails
+                    className="btn btn-primary"
+                    to="/Details"
+                    onClick={() =>
+                      dispatch(selectedCityActions.setSelectedCity(city))
+                    }
+                  >
+                    Details
+                  </LinkDetails>{" "}
+                </div>
               </div>
             ))}
           </div>

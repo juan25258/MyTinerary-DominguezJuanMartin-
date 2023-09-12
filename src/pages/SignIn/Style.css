@@ -1,0 +1,15 @@
+.Main-SignIn{
+    margin: 10rem;
+}
+
+#form-SignIn{
+    background:#add8e6 ;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+#exampleInputEmail1{
+    width: 50% !important
+}
+#exampleInputPassword1{
+    width: 30% !important;
+}
