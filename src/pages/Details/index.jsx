@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Style from "./Style.css";
-import { fetchItinerariesAsync } from "../../Store/actions/itineraries";
+import { fetchItinerariesAsync } from "../../store/actions/itineraries";
 
 export default function Details() {
   const selectedCity = useSelector((state) => state.selectedCity);
