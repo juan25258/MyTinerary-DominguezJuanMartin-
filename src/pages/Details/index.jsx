@@ -5,7 +5,7 @@ import { fetchItinerariesAsync } from "../../Store/actions/itineraries";
 
 export default function Details() {
   const selectedCity = useSelector((state) => state.selectedCity);
-  const itineraries = useSelector((state) => state.selectedCity.itineraries); //esto tenia mal configurado y me mandaba a otro estadado de redux!!
+  const itineraries = useSelector((state) => state.selectedCity.itineraries); //esto tenia mal configurado y me mandaba a otro estado de redux!! agregue selectedCity en elmedio
   const dispatch = useDispatch();
 
   useEffect(() => {

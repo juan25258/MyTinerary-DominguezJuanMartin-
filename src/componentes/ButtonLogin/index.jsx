@@ -36,19 +36,21 @@ export default function buttonLogin() {
               <h5>Inicia sesión para acceder a lo mejor de MyTinerary</h5>
               <div>
                 <button type="button" className="btn btn-light">
-                  <p>Continue with Google</p>
+                  <p>If you already have an account, <h5>Log in</h5></p>
                 </button>
                 <button type="button" className="btn btn-light">
-                  <p>Continue with your email</p>
+                  <p>Sign up with Google</p>
+                </button>
+                <button type="button" className="btn btn-light">
+                  <p>Sign up with your email</p>
                 </button>
               </div>
               <div>
                 <p>
-                  Al continuar, confirmás tu conformidad con nuestras
-                  Condiciones de Uso y confirmás que leíste nuestra Declaración
-                  de Privacidad y Cookies. Este sitio está protegido por
-                  reCAPTCHA y se aplican la Política de Privacidad y los
-                  Términos de Servicio de Google.
+                  By continuing, you confirm your agreement with our Terms of
+                  Use and confirm that you have read our Statement Privacy and
+                  Cookies. This site is protected by reCAPTCHA and the Privacy
+                  Policy and the Google Terms of Service.
                 </p>
               </div>
             </div>
