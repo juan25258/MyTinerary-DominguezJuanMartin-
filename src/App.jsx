@@ -4,8 +4,9 @@ import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
 import Cities from "./pages/Cities";
 import Details from "./pages/Details";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SignUp from "./pages/SignUp";
+import SingIn from "./pages/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,16 @@ const router = createBrowserRouter([
     path: "/Details",
     element: <Layout />,
     children: [{ path: "/Details", element: <Details /> }],
+  },
+  {
+    path: "/SignIn",
+    element: <Layout />,
+    children: [{ path: "/SignIn", element: <SingIn /> }],
+  },
+  {
+    path: "/SignUp",
+    element: <Layout />,
+    children: [{ path: "/SignUp", element: <SignUp /> }],
   },
 ]);
 

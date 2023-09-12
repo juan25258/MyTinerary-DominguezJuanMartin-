@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as LinkSign } from "react-router-dom"
 
 export default function buttonLogin() {
   return (
@@ -35,15 +36,15 @@ export default function buttonLogin() {
             <div className="modal-body">
               <h5>Inicia sesión para acceder a lo mejor de MyTinerary</h5>
               <div>
-                <button type="button" className="btn btn-light">
+                <LinkSign type="button" className="btn btn-light" to="/SignIn">
                   <p>If you already have an account, <h5>Log in</h5></p>
-                </button>
+                </LinkSign>
                 <button type="button" className="btn btn-light">
                   <p>Sign up with Google</p>
                 </button>
-                <button type="button" className="btn btn-light">
+                <LinkSign type="button" className="btn btn-light" to="/SignUp">
                   <p>Sign up with your email</p>
-                </button>
+                </LinkSign>
               </div>
               <div>
                 <p>

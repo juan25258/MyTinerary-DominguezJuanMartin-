@@ -19,10 +19,10 @@ export default function Details() {
       <main className="mainCities">
         <div className="card mb-3" style={{ paddingRight: "max-width= 540px" }}>
           <div className="row g-0">
-            <div class="col-md-4">
-              <img
+            <div  className="col-md-4" >
+              <img 
                 src={selectedCity.image}
-                class="img-fluid rounded-start "
+                className="img-fluid rounded-start "
                 alt=""
               />
             </div>
