@@ -48,6 +48,8 @@ export default function Details() {
               <div key={itinerary.id}>
                 
                 <p>{itinerary.name}</p>
+                <p>{itinerary.duration}</p>
+                <p>{itinerary.hashtag}</p>
                 <img src={itinerary.image} alt="" />
                 
               </div>
