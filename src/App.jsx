@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Layout from "./layouts/Layout";
 import Home from "./pages/Home";
@@ -7,6 +7,8 @@ import Details from "./pages/Details";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import SingIn from "./pages/SignIn";
+import { useDispatch } from "react-redux";
+import userActions from "./store/actions/user";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,12 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const dispatch = useDispatch()
+  
+  useEffect(() => {
+    dispatch(userActions.authenticate())
+
+  }, [])
   const [count, setCount] = useState(0);
 
   return (
