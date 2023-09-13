@@ -19,8 +19,8 @@ export default function Details() {
       <main className="mainCities">
         <div className="card mb-3" style={{ paddingRight: "max-width= 540px" }}>
           <div className="row g-0">
-            <div  className="col-md-4" >
-              <img 
+            <div className="col-md-4">
+              <img
                 src={selectedCity.image}
                 className="img-fluid rounded-start "
                 alt=""
@@ -35,29 +35,37 @@ export default function Details() {
             </div>
           </div>
         </div>
-
-        
-
-        
       </main>
-      <section>
-          <h2>{selectedCity.name} Itineraries</h2>
+      <h2>Itineraries</h2>
+      <section className="row">
+        {/* <h2>{selectedCity.name} Itineraries</h2> */}
 
-          {itineraries && itineraries.length > 0 ? (
-            itineraries.map((itinerary) => (
-              <div key={itinerary.id}>
-                
-                <p>{itinerary.name}</p>
+        {itineraries && itineraries.length > 0 ? (
+          itineraries.map((itinerary) => (
+            <div key={itinerary.id} >
+              {/* <p>{itinerary.name}</p>
                 <p>{itinerary.duration}</p>
                 <p>{itinerary.hashtag}</p>
-                <img src={itinerary.image} alt="" />
-                
-              </div>
-            ))
-          ) : (
-            <p>No hay itinerarios disponibles.</p>
-          )}
-        </section>
+                <img src={itinerary.image} alt="" /> */}
+              <h4 class="fw-normal">{itinerary.name}</h4>
+                <div class="col">
+                  <img src={itinerary.image} alt="" />
+                  
+                  <p>{itinerary.duration}</p>
+                  <p>{itinerary.hashtag}</p>
+                  <p>
+                    <a class="btn btn-secondary" href="#">
+                      View details »
+                    </a>
+                  </p>
+                </div>
+              
+            </div>
+          ))
+        ) : (
+          <p>No hay itinerarios disponibles.</p>
+        )}
+      </section>
     </>
   );
 }
