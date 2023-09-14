@@ -9,6 +9,10 @@ main.container {
 article {
   width: 90%;
 }
+#text-home{
+  color: coral;
+}
+
 div.logo {
   display: flex;
 }

@@ -1,4 +1,4 @@
-.mainCities{
+.mainCities {
   min-height: 80vh;
   align-items: center;
   margin-bottom: 3rem;
@@ -6,12 +6,36 @@
   justify-content: center;
 }
 
+div > h2 {
+  color: rgb(43, 107, 226);
+  margin-bottom: 5rem;
+  text-align: center;
+}
 
-div>h2 {
-  color: chartreuse;
+img.image-itinerary {
+  width: 140px;
+  height: 140px;
+  border-radius: 5rem;
+}
+
+section.itineraries{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5rem;
+}
+
+h4{
+  color:rgb(43, 107, 226);
+}
+#card-details{
+  width: auto !important;
 }
 
 div.card.mb-3{
   display: contents;
 
+}
+
+.col>p{
+  color: chocolate;
 }

@@ -1,30 +1,24 @@
 import React, { useRef } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { sign_in } from "../../store/actions/user"; 
 import Style from "./Style.css";
+import { Link, Link as LinkSign } from "react-router-dom";
 
 const SignIn = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://localhost:5000/api/user/login", {
+    dispatch(
+      sign_in({
         email: emailInputRef.current.value,
         password: passwordInputRef.current.value,
       })
-      .then((response) => {
-        console.log(response.data.token);
-            
-        localStorage.setItem("token", response.data.token );//guarda el token en el localStorage
-
-        let token = localStorage.getItem("token");
-        console.log(token);//trae el token que esta en el localStorage
-
-      })
-      .catch((error) => 
-        error.response.data.message.foreach(message => console.log(message)));
+    );
   };
 
   return (
@@ -57,9 +51,15 @@ const SignIn = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary login">
           Login
         </button>
+        <div className="register">
+          <p className="account">Don't have an account?</p>
+          <LinkSign to="/SignUp"><h5>Register</h5></LinkSign>
+        </div>
+        
+        
       </form>
     </main>
   );

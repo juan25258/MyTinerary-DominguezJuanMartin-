@@ -9,7 +9,7 @@ export default function Home() {
       <main className="container">
         <div>
           <article>
-            <p>
+            <p id="text-home">
               Find the perfect destination. Our app will help you find the
               perfect path for your next trip. With an easy-to-use interface and
               a host of itinerary options, planning your next trip has never

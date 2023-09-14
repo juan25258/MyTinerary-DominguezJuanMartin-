@@ -1,6 +1,9 @@
 .description {
     text-align: center;
     margin-top: 10px;
+    
   }
+p#city{
+   color: chocolate !important;
+}
 
- 
