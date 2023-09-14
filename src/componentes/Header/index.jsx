@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./Style.css";
 import { Link as LinkHeader } from "react-router-dom";
 import Home from "../../pages/Home";
-import ButtonLogin from "../buttonLogin";
+import ButtonLogin from "../ButtonLogin";
 
 
 export default function Header() {

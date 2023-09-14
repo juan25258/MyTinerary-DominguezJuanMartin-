@@ -1,4 +1,4 @@
-.mainCities{
+.mainCities {
   min-height: 80vh;
   align-items: center;
   margin-bottom: 3rem;
@@ -6,8 +6,23 @@
   justify-content: center;
 }
 
-
-div>h2 {
-  color: chartreuse;
+div > h2 {
+  color: rgb(43, 107, 226);
+  margin-bottom: 5rem;
   text-align: center;
+}
+
+img.image-itinerary {
+  width: 140px;
+  height: 140px;
+  border-radius: 5rem;
+}
+
+section.itineraries{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h4{
+  color:rgb(43, 107, 226);
 }

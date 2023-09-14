@@ -37,24 +37,19 @@ export default function Details() {
         </div>
       </main>
       <h2>Itineraries</h2>
-      <section className="row">
-        {/* <h2>{selectedCity.name} Itineraries</h2> */}
+      <section className="itineraries">
 
         {itineraries && itineraries.length > 0 ? (
           itineraries.map((itinerary) => (
             <div key={itinerary.id} >
-              {/* <p>{itinerary.name}</p>
-                <p>{itinerary.duration}</p>
-                <p>{itinerary.hashtag}</p>
-                <img src={itinerary.image} alt="" /> */}
-              <h4 class="fw-normal">{itinerary.name}</h4>
-                <div class="col">
-                  <img src={itinerary.image} alt="" />
+                <h4 className="autor">{itinerary.name}</h4>
+                <div className="col" >
+                  <img className="image-itinerary" src={itinerary.image} alt="" />
                   
                   <p>{itinerary.duration}</p>
                   <p>{itinerary.hashtag}</p>
                   <p>
-                    <a class="btn btn-secondary" href="#">
+                    <a className="btn btn-primary" href="#">
                       View details »
                     </a>
                   </p>

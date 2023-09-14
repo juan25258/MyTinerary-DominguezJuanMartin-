@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { sign_in } from "../../store/actions/user"; // Asegúrate de que esta ruta es correcta
 import Style from "./Style.css";
+import { Link, Link as LinkSign } from "react-router-dom";
 
 const SignIn = () => {
   const emailInputRef = useRef();
@@ -50,9 +51,15 @@ const SignIn = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary login">
           Login
         </button>
+        <div className="register">
+          <p>Don't have an account?</p>
+          <LinkSign to="/SignUp"><h5>Register</h5></LinkSign>
+        </div>
+        
+        
       </form>
     </main>
   );

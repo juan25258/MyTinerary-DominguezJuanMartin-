@@ -6,10 +6,23 @@
     background:#add8e6 ;
     border-radius: 1rem;
     padding: 2rem;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 #exampleInputEmail1{
-    width: 50% !important
+    width: 90% !important
 }
 #exampleInputPassword1{
-    width: 30% !important;
+    width: 50% !important;
+}
+
+button.btn.btn-primary.login {
+    margin-bottom: 1rem;
+}
+
+.register{
+    display: flex;
+    gap: 1rem;
 }
