@@ -21,6 +21,7 @@ img.image-itinerary {
 section.itineraries{
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 5rem;
 }
 
 h4{
@@ -28,4 +29,8 @@ h4{
 }
 #card-details{
   width: auto !important;
+}
+
+.col>p{
+  color: chocolate;
 }

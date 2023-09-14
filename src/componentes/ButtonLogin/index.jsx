@@ -32,7 +32,7 @@ export default function buttonLogin() {
           <h5>Inicia sesión para acceder a lo mejor de MyTinerary</h5>
           <div className="buttons">
             <LinkSign type="button" className="btn btn-info" to="/SignIn" onClick={handleCloseModal}>
-              <p className="text-buttons-modal">If you already have an account, <h5>Log in</h5></p>
+              <p className="text-buttons-modal">If you already have an account, Log in</p>
             </LinkSign>
             <button type="button" className="btn btn-info">
               <p className="text-buttons-modal">Sign up with Google</p>

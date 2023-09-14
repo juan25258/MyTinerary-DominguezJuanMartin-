@@ -3,8 +3,15 @@ div.buttons{
     height: 45vh;
     align-items: center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 p.text-buttons-modal{
-   color: #0e0903
+   color: #0e0903;
+   display: contents;
+}
+p{
+   
+        font-family: cursive;
+        color: #000000;
+  
 }
