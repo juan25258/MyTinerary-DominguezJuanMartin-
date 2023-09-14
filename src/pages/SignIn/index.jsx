@@ -55,7 +55,7 @@ const SignIn = () => {
           Login
         </button>
         <div className="register">
-          <p>Don't have an account?</p>
+          <p className="account">Don't have an account?</p>
           <LinkSign to="/SignUp"><h5>Register</h5></LinkSign>
         </div>
         

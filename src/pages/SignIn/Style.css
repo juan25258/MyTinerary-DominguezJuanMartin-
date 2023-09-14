@@ -26,3 +26,7 @@ button.btn.btn-primary.login {
     display: flex;
     gap: 1rem;
 }
+
+.account{
+    color: rgb(22, 20, 20);
+}
