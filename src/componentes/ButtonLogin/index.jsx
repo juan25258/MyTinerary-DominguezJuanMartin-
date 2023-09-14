@@ -29,7 +29,7 @@ export default function buttonLogin() {
           <Modal.Title>MyTinerary</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h5>Inicia sesión para acceder a lo mejor de MyTinerary</h5>
+          <h5>Sign in to access the best of MyTinerary</h5>
           <div className="buttons">
             <LinkSign type="button" className="btn btn-info" to="/SignIn" onClick={handleCloseModal}>
               <p className="text-buttons-modal">If you already have an account, Log in</p>
