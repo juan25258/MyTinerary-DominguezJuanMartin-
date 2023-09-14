@@ -9,6 +9,7 @@ import SignUp from "./pages/SignUp";
 import SingIn from "./pages/SignIn";
 import { useDispatch } from "react-redux";
 import userActions from "./store/actions/user";
+import DetailsItineraries from "./componentes/DetailsItineraries";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,12 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [{ path: "/SignUp", element: <SignUp /> }],
   },
+  {
+    path: "/DetailsItineraries",
+    element: <Layout />,
+    children: [{ path: "/DetailsItineraries", element: <DetailsItineraries /> }],
+  }
+
 ]);
 
 function App() {

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Style from "./Style.css";
 import { fetchItinerariesAsync } from "../../Store/actions/itineraries";
+import DetailsItineraries from "../../componentes/DetailsItineraries";
+import { Link as LinkDetailsItineraries } from "react-router-dom";
 
 export default function Details() {
   const selectedCity = useSelector((state) => state.selectedCity);
@@ -17,14 +19,10 @@ export default function Details() {
   return (
     <>
       <main className="mainCities">
-        <div className="card mb-3" style={{ paddingRight: "max-width= 540px" }}>
+        <div className="card" id="card-details">
           <div className="row g-0">
             <div className="col-md-4">
-              <img
-                src={selectedCity.image}
-                className="img-fluid rounded-start "
-                alt=""
-              />
+              <img src={selectedCity.image} className="card-img" alt="" />
             </div>
             <div className="col-md-8">
               <div className="card-body">
@@ -38,23 +36,27 @@ export default function Details() {
       </main>
       <h2>Itineraries</h2>
       <section className="itineraries">
-
         {itineraries && itineraries.length > 0 ? (
           itineraries.map((itinerary) => (
-            <div key={itinerary.id} >
-                <h4 className="autor">{itinerary.name}</h4>
-                <div className="col" >
-                  <img className="image-itinerary" src={itinerary.image} alt="" />
-                  
-                  <p>{itinerary.duration}</p>
-                  <p>{itinerary.hashtag}</p>
-                  <p>
-                    <a className="btn btn-primary" href="#">
-                      View details »
-                    </a>
-                  </p>
-                </div>
-              
+            <div key={itinerary.id}>
+              <h4 className="autor">{itinerary.name}</h4>
+              <div className="col">
+                <img className="image-itinerary" src={itinerary.image} alt="" />
+
+                <p>Duration: {itinerary.duration}</p>
+                <p>{itinerary.hashtag}</p>
+                <p>Likes: {itinerary.likes}</p>
+                <p>
+                  <LinkDetailsItineraries
+                    id="btn-article"
+                    to="/DetailsItineraries"
+                    className="btn btn-primary"
+                    href="#"
+                  >
+                    View details »
+                  </LinkDetailsItineraries>
+                </p>
+              </div>
             </div>
           ))
         ) : (

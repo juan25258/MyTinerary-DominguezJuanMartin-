@@ -1,0 +1,10 @@
+div.buttons{
+    display: flex;
+    height: 45vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+p.text-buttons-modal{
+   color: #0e0903
+}

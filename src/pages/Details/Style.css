@@ -26,3 +26,6 @@ section.itineraries{
 h4{
   color:rgb(43, 107, 226);
 }
+#card-details{
+  width: auto !important;
+}
