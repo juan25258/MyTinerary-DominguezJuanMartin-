@@ -4,3 +4,9 @@
     margin-inline: auto;
     margin-top: 5rem;
 }
+
+form.formulario{
+    background: #add8e6;
+    border-radius: 1rem;
+    padding: 1rem;
+}

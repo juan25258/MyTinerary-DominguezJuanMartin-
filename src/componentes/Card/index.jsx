@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import cities, { setFilter } from "../../Store/reducers/cities";
 import { Link as LinkDetails } from "react-router-dom";
 /* import { useHistory } from 'react-router-dom'; */
-import { setSelectedCity } from '../../Store/reducers/cities';
+import { setSelectedCity } from "../../Store/reducers/cities";
 
 export default function Card({ city }) {
   /* const history = useHistory(); */
@@ -35,12 +35,7 @@ export default function Card({ city }) {
         >
           Details
         </LinkDetails>
-
-        {/* <button id="btn-card" className="btn btn-primary" onClick={handleClick}>
-          Details
-        </button> */}
       </div>
     </div>
   );
 }
-

@@ -42,7 +42,7 @@ const SignUp = () => {
     <main className="sign-up">
       <section id="register" className="row g-3">
         {showForm ? (
-          <form onSubmit={handleSubmit}>
+          <form className="formulario" onSubmit={handleSubmit}>
             <div className="row g-3">
             <div className="col">
               <input
@@ -95,9 +95,11 @@ const SignUp = () => {
               <option value="" selected>
                 Choose...
               </option>
-              <option value="Option1">Option1</option>
-              <option value="Option2">Option2</option>
-              <option value="Option3">Option3</option>
+              <option value="Option1">Argentina</option>
+              <option value="Option2">France</option>
+              <option value="Option3">Brazil</option>
+              <option value="Option4">Italy</option>
+              <option value="Option5">Other</option>
             </select>
           </div>
           <div className="col-md-6">

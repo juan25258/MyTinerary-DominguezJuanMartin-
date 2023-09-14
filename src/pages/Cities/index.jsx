@@ -79,13 +79,6 @@ export default function Cities() {
                 onKeyDown={handleKeyDown}
                 value={filter}
               />
-              {/* <button
-                className="btn btn-outline-success"
-                type="button"
-                //onClick={handleSearchClick}
-              >
-                Search
-              </button> */}
             </form>
           </div>
         </nav>
