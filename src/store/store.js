@@ -9,7 +9,7 @@ export const store = configureStore({
         cities: citiesReducer,
         selectedCity: selectedCityReducer,
         itineraries: itinerariesReducer,
-        userReducer: userReducer
+        userReducer: userReducer,
     },
     devTools: true, //habilita las opciones de desarrollador en redux dev tools
 })

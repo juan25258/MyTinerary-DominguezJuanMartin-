@@ -18,6 +18,9 @@ const userReducer = createReducer(initialState, (builder) => {
     })
     .addCase(userActions.sign_out.fulfilled, (state, action) => {
       return initialState
+    })
+    .addCase(userActions.sign_up.fulfilled, (state, action) => {
+      state.user = action.payload;
     });
 });
 

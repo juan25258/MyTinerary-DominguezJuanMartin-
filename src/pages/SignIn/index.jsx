@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { sign_in } from "../../store/actions/user"; // Asegúrate de que esta ruta es correcta
+import { sign_in } from "../../store/actions/user"; 
 import Style from "./Style.css";
 import { Link, Link as LinkSign } from "react-router-dom";
 
