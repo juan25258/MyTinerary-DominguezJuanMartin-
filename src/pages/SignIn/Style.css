@@ -1,5 +1,7 @@
-.Main-SignIn{
+.Main{
     margin: 10rem;
+    display: flex;
+    justify-content: center;
 }
 
 #form-SignIn{
@@ -10,6 +12,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
+    margin-top: 5rem;
 }
 #exampleInputEmail1{
     width: 90% !important

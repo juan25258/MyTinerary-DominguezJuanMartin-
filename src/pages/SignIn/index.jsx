@@ -22,7 +22,7 @@ const SignIn = () => {
   };
 
   return (
-    <main className="Main-SignIn">
+    <main>
       <form id="form-SignIn" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">

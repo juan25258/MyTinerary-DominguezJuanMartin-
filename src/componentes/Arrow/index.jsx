@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "./Style.css";
+import Style from "./Style.css"
 
 const Arrow = ({ src, alt, fn }) => {
   return (
